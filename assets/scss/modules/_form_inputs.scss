@@ -1,0 +1,37 @@
+/*
+* Form input styling v2.
+* 2021
+ */
+
+form {
+  &.form-inputs-v2 {
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="password"],
+    input[type="date"],
+    input[type="time"],
+    input[type="range"],
+    input[type="search"],
+    input[type="file"],
+    input[type="datetime-local"],
+    input[type="color"],
+    input[type="tel"] {
+      border-radius: 4px;
+
+      &:not(.error) {
+        border: 1px solid #C0C0C0;
+      }
+
+      &:focus:not(.error), &:active:not(.error) {
+        border: 2px solid $color-primary;
+      }
+
+      &:hover:not(:focus):not(.error) {
+        border: 1px solid $color-body;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,23 @@
+.fancybox {
+
+  &-bg {
+    background: rgba(15, 26, 74, 0.3);
+  }
+
+  &-content {
+    border-radius: 20px;
+  }
+
+  &-active, &.compensate-for-scrollbar {
+
+  }
+
+  &-slide--html {
+    padding: 0;
+  }
+
+}
+
+body.compensate-for-scrollbar.fancybox-active {
+  overflow: hidden !important;
+}

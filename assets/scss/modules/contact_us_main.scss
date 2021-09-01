@@ -1,0 +1,120 @@
+.right-sidebar {
+  .sam_form {
+    .form-container {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.sam_form {
+  .gform_wrapper {
+
+    .gfield_required {
+      display: none;
+    }
+  }
+}
+
+#contact-us-page {
+  #contacts-map {
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+ .contact-us .gform_confirmation_wrapper  {
+    margin-top: -35px;
+  }
+
+  .sam_form {
+    &.contact-us {
+      margin-top: 27px;
+    }
+
+
+    .gform_wrapper {
+      .contact-us-form {
+        div.validation_error {
+          margin-top: -27px;
+        }
+      }
+    }
+  }
+
+  .wp-post-image {
+    margin: 0 auto 16px auto;
+  }
+
+}
+
+
+
+@media (max-width: $breakpoint-medium) {
+  #main #contact-us-page {
+
+    .col {
+
+      &:first-child {
+        padding-bottom: 30px;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 45px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-medium) {
+  #contacts-map {
+    min-height: 380px;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+
+  .mob_des{
+    margin-bottom: 15px;
+  }
+  #contact-us-page {
+
+    .contact-content {
+      padding-top: 0;
+      margin-bottom: 30px;
+    }
+
+    .content {
+      h2 {
+        font-size: 20px;
+        margin-bottom: 8px;
+      }
+    }
+
+    .sam_form .gform_wrapper {
+
+      .gform_footer input[type=submit] {
+        width: 100%;
+      }
+
+      ul.gform_fields {
+
+        li.email-container {
+          width: 100%;
+          float: none;
+          padding-right: 0;
+        }
+
+        li.phone-container {
+          width: 100%;
+          float: none;
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+
+    }
+
+  }
+}
+
+
+

@@ -1,0 +1,54 @@
+.rates-container {
+  background-color: $color-secondary-light-plus;
+  padding-top: 17px;
+  padding-bottom: 45px;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+
+  #parametersForm {
+    display: none;
+  }
+}
+
+.no-rates-found {
+  text-align: center;
+  padding: 45px;
+  border: 1px solid $color-secondary-light;
+  margin: 50px auto 0 auto;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 4px;
+}
+
+
+@media only screen and (min-width: $breakpoint-phone-small) and (max-width: $breakpoint-mobile-iphone) and (orientation: landscape) {
+  .rates-container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .no-rates-found {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+}
+
+
+@media (max-width: $breakpoint-phone) and (orientation: portrait) {
+  .rates-container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .no-rates-found {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 20px;
+    border: 0;
+
+    .title {
+      font-size: 20px;
+    }
+  }
+}

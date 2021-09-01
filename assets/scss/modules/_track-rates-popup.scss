@@ -1,0 +1,421 @@
+/* custom checkbox */
+#track_rates input[type=checkbox]~.checkmark {
+  box-shadow: 0 0 0 2px $color-white;
+}
+
+body.input-focus-outlines input[type=checkbox]:focus~.checkmark {
+  box-shadow: 0 0 0 1.5px #0c0c0c !important;
+  border-radius: 2px;
+  z-index: 88
+}
+
+.label-container {
+  display: inline-block;
+  position: relative;
+  padding-left: 23px;
+  line-height: 1.12;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+.label-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: $color-white;
+  border: 1px solid #c4c4c4;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 4px
+}
+
+.label-container:hover input~.checkmark {
+  background-color: #f9f9f9
+}
+
+.label-container input:checked~.checkmark {
+  background-color: $color-primary;
+  border-color: $color-primary;
+}
+
+.checkmark:after,
+.label-container:after {
+  content: "";
+  position: absolute;
+  display: none
+}
+
+.label-container input:checked~.checkmark:after {
+  display: block
+}
+
+.label-container .checkmark:after {
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid #000;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg)
+}
+/* @endof - custom checkbox */
+
+
+#track_rates {
+  width: 734px;
+  height: 781px;
+  color: #5D5D5D;
+  max-width: calc(100% - 30px);
+  z-index: 999;
+  left: calc(50% - (720px / 2));
+}
+
+
+#track_rates .toggle-radio > input + label {
+  flex-basis: 50%;
+}
+
+#track_rates .hours-select-container select {
+  border-radius: 8px;
+  height: 48px;
+  min-width: 112px;
+  appearance: none !important;
+  position: relative;
+  padding: 13px 20px;
+  -webkit-appearance: none;
+  background: url(../../assets/img/rqt/select-alert-arrow-down.svg) $color-white no-repeat;
+  background-size: 29px;
+  background-position: right 16px center;
+}
+
+#track_rates h3 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 140%;
+  margin-bottom: 10px;
+}
+
+#track_rates input[type=text], #track_rates select, #track_rates input[type="tel"], #track_rates input[type="email"] {
+  padding-left: 16px;
+}
+
+#track_rates .alerts-preferences h3 {
+  margin-bottom: 5px;
+}
+
+#track_rates .modal-header {
+  padding: 19px 20px 19px 45px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #C4C4C4;
+}
+
+#track_rates form .submit-form {
+  width: 100%;
+  margin-top: 53px;
+}
+
+#track_rates form .row.field-container > div:nth-child(even), #track_rates form .row.field-container:last-child > div {
+  padding-left: 22.5px;
+}
+
+#track_rates form .row.field-container:not(:last-child) > div:nth-child(odd) {
+  padding-right: 22.5px;
+}
+
+#track_rates form .row.field-container:not(:last-child) {
+  margin-bottom: 21px;
+}
+
+#track_rates form input::placeholder {
+  color: #828282;
+}
+
+#track_rates form .loan-preferences {
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 0px 23px;
+  grid-template-areas: ". .";
+}
+
+#track_rates form .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: $color-white;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+#track_rates .label-container .checkmark:after {
+  left: 6px;
+  top: 1.5px;
+  width: 5px;
+  height: 10px;
+  border: solid #000;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(
+                  45deg
+  );
+  -ms-transform: rotate(45deg);
+  transform: rotate(
+                  45deg
+  );
+}
+
+#track_rates form .label-container {
+  padding-left: 29px;
+}
+
+#track_rates form .loan-preferences label {
+  color: #5D5D5D;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+#track_rates .sec-desc {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  color: #828282;
+  margin-bottom: 18px;
+}
+
+#track_rates .alerts-preferences {
+  margin-top: 13px;
+}
+
+#track_rates form .field-container label {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 140%;
+  color: #828282;
+  display: block;
+  margin-bottom: 8px;
+}
+
+#track_rates form .loan-preferences .loan-col {
+  width: 50%;
+  float: left;
+}
+
+#track_rates form .loan-preferences .loan-col:last-child {
+  padding-left: 23px;
+}
+
+#track_rates .modal-footer {
+  background: #F1F9ED;
+  padding: 28px;
+  text-align: center;
+  position: relative;
+}
+
+
+#track_rates .modal-footer h2 {
+  margin: 0;
+  color: $color-primary;
+}
+
+#track_rates .modal-header .office-time {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  margin-left: auto;
+  line-height: 140%;
+  margin-right: 45px;
+}
+
+#track_rates .modal-header .office-time .title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 140%;
+  color: #797979;
+}
+
+#track_rates .modal-header .office-time .time-value {
+  display: inline-block;
+}
+
+#track_rates .modal-header .office-time .pacific {
+  color: #797979;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#track_rates .modal-header .header-title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 140%;
+}
+
+#track_rates .modal-body {
+  padding: 23px 45px 50px 45px;
+}
+
+#track_rates .hours-select-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#track_rates .hours-select-container > div {
+  margin-right: 13px;
+}
+
+#track_rates .description {
+  max-width: 100%;
+  width: 460px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 180%;
+  text-align: center;
+  color: #797979;
+  min-height: 50px;
+  margin: 0 auto 25px auto;
+}
+
+#track_rates .modal-close {
+  top: calc(50% - 12.5px);
+}
+
+/* iPhone 6 Plus/7/x landscape */
+@media only screen
+and (min-width: 375px)
+and (max-width: 820px)
+and (orientation: landscape) {
+  #track_rates form .loan-preferences label {
+    margin-bottom: 18px;
+  }
+}
+
+@media only screen
+and (max-width: 776px)
+and (orientation: landscape) {
+  .alerts-preferences > .row > div {
+    width: calc(25% + 20px);
+  }
+
+
+  .alerts-preferences > .row > div:last-child {
+    width: calc(50% - 40px);
+  }
+
+  #track_rates form .submit-form {
+    margin-top: 20px;
+  }
+
+  .toggle-radio.three {
+    min-width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .toggle-radio.three {
+    min-width: 100%;
+  }
+
+  #track_rates form .loan-preferences label {
+    margin-bottom: 18px;
+  }
+
+  .toggle-radio > input + label[for=alert_Once] {
+    width: 50%;
+  }
+
+  #track_rates form .row > div {
+    margin-bottom: 21px;
+  }
+
+  #track_rates .modal-header {
+    padding: 15px;
+  }
+
+  #track_rates .toggle-radio {
+    width: 100%;
+  }
+
+
+  #track_rates form .row.field-container:not(:last-child) > div:nth-child(odd)
+  #track_rates .description {
+    min-height: inherit;
+  }
+
+  #track_rates form .row.field-container:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  #track_rates .modal-body {
+    padding: 15px;
+  }
+
+  #track_rates .modal-header .header-title {
+    margin-bottom: 0;
+  }
+
+  #track_rates form .row.field-container:last-child > div, #track_rates form .row.field-container > div:nth-child(even) {
+    padding-left: 15px;
+  }
+
+  #track_rates form .row.field-container:not(:last-child) > div:nth-child(odd) {
+    padding-right: 15px;
+  }
+
+}
+
+
+@media screen and (max-width: 550px) {
+
+  #track_rates .modal-header {
+    display: block;
+  }
+
+  #track_rates .modal-close {
+    top: 15px;
+  }
+
+  #track_rates form .loan-preferences {
+    gap: 0 0px;
+    margin-left: 1px;
+  }
+
+
+  #track_rates form .submit-form {
+    margin-top: 15px;
+  }
+
+  #track_rates .modal-body {
+    padding: 15px;
+  }
+
+
+}

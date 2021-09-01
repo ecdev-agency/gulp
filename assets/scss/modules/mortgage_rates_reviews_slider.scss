@@ -1,0 +1,62 @@
+#testimonials_slider {
+  .reviews-item {
+    max-width: 730px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 160%;
+    text-align: center;
+    color: #2C2C2C;
+
+    .review-author {
+      margin-top: 24px;
+      font-family: 'Rubik', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 160%;
+      text-align: center;
+      color: #2C2C2C;
+    }
+  }
+
+
+  .owl-dots {
+    margin-top: 32px;
+    line-height: 0;
+
+    .owl-dot {
+      span {
+        width: 8px;
+        height: 8px;
+        margin: 0px 4px;
+        background: $color-inactive;
+        display: block;
+      }
+
+      &.active {
+        span {
+          background: $color-primary;
+          width: 16px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+@media screen and (max-width: $breakpoint-mobile) {
+  #testimonials_slider {
+    .reviews-item {
+      max-width: calc(100% - 30px);
+    }
+  }
+
+
+}

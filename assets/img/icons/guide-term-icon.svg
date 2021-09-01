@@ -1,0 +1,13 @@
+<svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g>
+        <path d="M23.1 15.7H17.8V42.7H23.1V15.7Z" fill="#D8D7EC"/>
+        <path d="M9.3 0.699951H4V58.5H9.3V0.699951Z" fill="#D8D7EC"/>
+        <path d="M13.5 0.699951H4V58.5H13.5V0.699951Z" stroke="#2C3972" stroke-width="1.4173" stroke-miterlimit="10"/>
+        <path d="M1.10001 11.7V5.30005H4.00001V11.7H1.10001ZM13.5 5.30005H64.1V11.7H13.5V5.30005Z" stroke="#2C3972" stroke-width="1.4173" stroke-miterlimit="10"/>
+        <path d="M57.6 15.7H17.8V42.7H57.6V15.7Z" stroke="#2C3972" stroke-width="1.4173" stroke-miterlimit="10"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M36.6 21.4001L29 27.1001C28.2 27.7001 28.6 28.9001 29.6 28.9001H30.9V35.5001C30.9 36.7001 31.9 37.8001 33.2 37.8001H37.8H42.3C43.6 37.8001 44.6 36.8001 44.6 35.5001V28.9001H45.9C46.9 28.9001 47.3 27.7001 46.5 27.1001L38.9 21.4001C38.2 21.0001 37.3 21.0001 36.6 21.4001ZM37.7 33.2001H36.2C35.8 33.2001 35.4 32.8001 35.4 32.4001V29.4001C35.4 29.0001 35.8 28.6001 36.2 28.6001H37.7H39.2C39.7 28.6001 40 29.0001 40 29.4001V32.4001C40 32.8001 39.6 33.2001 39.2 33.2001H37.7Z" fill="#969BD0" stroke="#2C3972" stroke-width="1.4173" stroke-miterlimit="10"/>
+        <path d="M21.7 11.7L23.8 15.7" stroke="#2C3972" stroke-width="1.4173" stroke-miterlimit="10"/>
+        <path d="M53.7 11.7L51.7 15.7" stroke="#2C3972" stroke-width="1.4173" stroke-miterlimit="10"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.10001 63.7001H16.5L13.5 57.3H4.00001L1.10001 63.7001Z" fill="#969BD0" stroke="#2C3972" stroke-width="1.4173" stroke-miterlimit="10"/>
+    </g>
+</svg>

@@ -1,0 +1,1006 @@
+@import "../variables";
+@import "../modules/connect_lending_experts";
+@import "../modules/mortgage_rate_multiple_factors";
+@import "../modules/rate_quote_expected";
+@import "../modules/mortgage_reviews_vertical";
+@import "../modules/mortgage_faq_section";
+@import "../modules/mortgage_rate_online_tools";
+
+//Mortgage Report Page
+.mortgage_report {
+  .row {
+    &:before {
+      display: none;
+    }
+    &:after {
+      display: none;
+    }
+  }
+
+  //Section
+  section {
+    position: relative;
+  }
+
+  //Content
+  .content {
+    &-container {
+      padding-top: 0;
+      margin-bottom: 0px;
+    }
+  }
+
+  //Heading
+  &__heading {
+    background: $color-secondary url('../img/mortgage-calculator/report-heading.png') right center no-repeat;
+    height: 270px;
+    padding: 55px 0;
+    position: relative;
+    z-index: 1;
+
+    @media screen and (max-width: $breakpoint-medium) {
+      height: auto;
+      padding: 55px 0 90px 0;
+    }
+    @media screen and (max-width: $breakpoint-phone-small) {
+      background-size: cover;
+    }
+
+    &-title {
+      color: #fff;
+      margin: 0;
+      text-align: left;
+
+      @media screen and (max-width: $breakpoint-medium) {
+        font-size: 36px;
+        line-height: 44px;
+      }
+      @media screen and (max-width: $breakpoint-mobile) {
+        margin: 0 0 30px 0;
+      }
+
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      [class*=col-] {
+        display: flex;
+        align-items: center;
+
+        &:last-child {
+          justify-content: flex-end;
+          @media screen and (max-width: $breakpoint-mobile) {
+            justify-content: flex-start;
+          }
+        }
+
+      }
+
+    }
+
+    &-share {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      @media screen and (max-width: $breakpoint-phone) {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      > div {
+        @media screen and (max-width: $breakpoint-phone) {
+          width: calc(50% - 15px);
+        }
+
+        &:not(:last-child) {
+          margin: 0 28px 0 0;
+          @media screen and (max-width: $breakpoint-phone) {
+            margin: 0;
+          }
+        }
+      }
+
+      .btn {
+        width: 116px;
+        cursor: pointer;
+
+        @media screen and (max-width: $breakpoint-phone) {
+          width: 100%;
+        }
+
+        &-opacity {
+          border-color: #fff;
+          &:hover {
+            border-color: $color-primary;
+            background-color: $color-primary;
+            cursor: pointer;
+          }
+        }
+
+        &.active {
+          border-color: $color-primary;
+          background-color: $color-primary;
+        }
+
+      }
+
+      &-wrapper {
+        position: relative;
+      }
+
+      &-list {
+        padding: 12px;
+
+        a {
+          display: flex;
+          align-items: center;
+          white-space: nowrap;
+          color: #000;
+
+          &:not(:last-child) {
+            margin: 0 0 12px 0;
+          }
+
+          img, svg {
+            margin: 0 8px 0 0;
+          }
+
+        }
+
+      }
+
+      &-content {
+        display: none;
+      }
+
+    }
+
+  }
+
+  //Not Print
+  &__notprint {
+    z-index: 2;
+    margin: -70px 0 30px 0;
+
+    @media screen and (max-width: $breakpoint-medium) {
+      margin: -45px 0 75px 0;
+    }
+
+    > .container {
+
+      > .row {
+        display: flex;
+        flex-wrap: wrap;
+        @media screen and (max-width: $breakpoint-medium) {
+          flex-direction: column;
+        }
+
+        [class*=col-] {
+
+        }
+
+      }
+
+    }
+
+    &-column {
+      height: 100%;
+      background-color: #fff;
+      box-shadow: 0px 8px 30px rgba(0, 20, 160, 0.1);
+      border-radius: 8px;
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @media screen and (max-width: $breakpoint-medium) {
+        padding: 30px 15px 10px 15px;
+        margin: 0 0 15px 0;
+        height: auto;
+      }
+
+      [class*=col-] {
+        margin-bottom: 15px;
+      }
+
+      &-header {
+
+        &.border {
+          &-bottom {
+            border-bottom: 1px solid $color-secondary-light;
+            @media screen and (max-width: $breakpoint-large-lg) {
+              margin-bottom: 40px;
+            }
+            @media screen and (max-width: $breakpoint-medium) {
+              margin-bottom: 0px;
+            }
+          }
+        }
+
+        .result {
+          text-align: right;
+        }
+
+      }
+
+      &-title {
+        @media screen and (max-width: $breakpoint-large-lg) {
+          font-size: 24px;
+          line-height: 32px;
+        }
+        @media screen and (max-width: $breakpoint-medium) {
+          margin-bottom: 15px;
+        }
+      }
+
+      &-total {
+        font-size: 30px;
+        @media screen and (max-width: $breakpoint-phone) {
+          font-size: 24px;
+        }
+
+        [class*=col-] {
+          margin-bottom: 0;
+        }
+
+        .result {
+          color: $color-secondary;
+          text-align: right;
+          white-space: nowrap;
+
+          span {
+            font-weight: 500;
+            font-size: 16px;
+            color: $color-body-secondary;
+          }
+
+        }
+
+      }
+
+      &-footer {
+        @media screen and (max-width: $breakpoint-medium) {
+          padding: 30px 0 15px 0;
+        }
+      }
+
+    }
+
+  }
+
+  //Approved
+  &__approved {
+    margin: 0 0 150px 0;
+    @media screen and (max-width: $breakpoint-medium) {
+      margin: 0 0 90px 0;
+    }
+
+    &-container {
+      $width-right: 203px;
+      $height: 209px;
+
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+      background: $color-secondary url('../img/mortgage-calculator/approved-background.png') right center no-repeat;
+      height: $height;
+      padding: 30px 56px 30px 30px;
+      @media screen and (max-width: $breakpoint-large-lg) {
+        padding: 30px;
+      }
+      @media screen and (max-width: $breakpoint-medium) {
+        flex-direction: column;
+        height: auto;
+        justify-content: flex-start;
+        background-image: none;
+      }
+
+      &-left {
+        width: calc(100% - #{$width-right});
+        padding: 0 30px 0 0;
+        @media screen and (max-width: $breakpoint-medium) {
+          width: 100%;
+          padding: 0;
+        }
+      }
+
+      &-right {
+        width: $width-right;
+        @media screen and (max-width: $breakpoint-medium) {
+          width: 100%;
+        }
+
+        .btn {
+          @media screen and (max-width: $breakpoint-medium) {
+            width: 100%;
+            max-width: 315px;
+            margin: 55px 0 0 0;
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+
+      }
+
+    }
+
+    &-text {
+      color: #fff;
+
+      p {
+        font-weight: normal;
+        font-size: 16px;
+        padding: 0 0 15px 0;
+        margin: 0;
+        @media screen and (max-width: $breakpoint-medium) {
+          padding: 0 0 30px 0;
+        }
+      }
+
+      small {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        color: $color-body-secondary;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0 0 22px 0;
+        padding: 0;
+        display: flex;
+        color: #fff;
+        @media screen and (max-width: $breakpoint-medium) {
+          flex-direction: column;
+        }
+
+        > li {
+
+          &:not(:last-child) {
+            margin: 0 49px 0 0;
+            @media screen and (max-width: $breakpoint-large-lg) {
+              margin: 0 30px 0 0;
+            }
+            @media screen and (max-width: $breakpoint-medium) {
+              margin: 0 0 30px 0;
+            }
+
+          }
+
+          strong {
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 38px;
+            display: block;
+            @media screen and (max-width: $breakpoint-large-lg) {
+              font-size: 24px;
+              line-height: 32px;
+            }
+          }
+
+          span {
+            font-weight: normal;
+            font-size: 16px;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  //Amortization
+  &__amort {
+    margin: 0 0 150px 0;
+    @media screen and (max-width: $breakpoint-medium) {
+      margin: 0 0 90px 0;
+    }
+
+    &-title {
+      margin: 0 0 30px 0;
+    }
+
+    &-chart {
+
+    }
+
+    &-legend {
+      list-style: none;
+      padding: 0;
+      margin: 30px 0 0 0;
+      display: flex;
+      justify-content: center;
+      font-weight: normal;
+      font-size: 14px;
+      @media screen and (max-width: $breakpoint-phone) {
+        display: none;
+      }
+
+      > li {
+        position: relative;
+        padding: 0 0 0 15px;
+        margin: 0 29px;
+        white-space: nowrap;
+        @media screen and (max-width: $breakpoint-medium) {
+          margin: 0 15px;
+        }
+
+        &:first-child {
+          margin-left: 0;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &:before {
+          $size: 6px;
+
+          content: '';
+          display: block;
+          width: $size;
+          height: $size;
+          border-radius: 50%;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-52%);
+
+        }
+
+        &.green {
+
+          &::before {
+            background-color: #24AB4C;
+          }
+
+        }
+        &.blue {
+
+          &::before {
+            background-color: #4064E4;
+          }
+
+        }
+        &.violet {
+
+          &::before {
+            background-color: #8874FA;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  //Shedule
+  &__shedule {
+
+    &-title {
+
+    }
+
+    &-header {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 15px 0;
+      @media screen and (max-width: $breakpoint-mobile) {
+        z-index: 2;
+        margin: 0 0 30px 0;
+      }
+    }
+
+    &-tabs {
+      $border-radius: 4px;
+
+      display: inline-flex;
+      border-radius: $border-radius;
+      border: 1px solid $color-secondary-light;
+      @media screen and (max-width: $breakpoint-mobile) {
+        width: 100%;
+      }
+
+      .tab {
+        height: 38px;
+        font-weight: normal;
+        font-size: 14px;
+        color: $color-body-secondary;
+        padding: 0 20px;
+        white-space: nowrap;
+        line-height: 38px;
+        height: 100%;
+        position: relative;
+        cursor: pointer;
+        z-index: 1;
+        @media screen and (max-width: $breakpoint-mobile) {
+          width: 50%;
+          text-align: center;
+          padding: 0;
+        }
+
+        &:not(:last-child) {
+          border-right: 1px solid $color-secondary-light;
+        }
+
+        &.active {
+          color: $color-secondary;
+          box-shadow: 0px 8px 30px rgba(0, 20, 160, 0.1);
+          z-index: 2;
+
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            border-radius: $border-radius;
+            border: 2px solid $color-secondary;
+            left: -1px;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            z-index: 3;
+
+          }
+
+        }
+
+      }
+
+    }
+
+    &-content {
+      position: relative;
+      z-index: 2;
+      background-color: $color-secondary-light-plus;
+      padding: 42px 0 111px 0;
+      @media screen and (max-width: $breakpoint-mobile) {
+        background-color: #fff;
+        z-index: 1;
+        padding: 0px 0 90px 0;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -1;
+        background-color: $color-secondary-light-plus;
+        left: -9999px;
+        right: -9999px;
+        top: 0;
+        bottom: 0;
+        @media screen and (max-width: $breakpoint-mobile) {
+          display: none;
+        }
+      }
+
+      .tb {
+        position: relative;
+        z-index: 2;
+
+        &:not(.active) {
+          display: none;
+        }
+      }
+
+    }
+
+    &-navigation {
+      position: absolute;
+      right: 0;
+      top: -90px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+      font-weight: normal;
+      font-size: 14px;
+      color: $color-body;
+      @media screen and (max-width: $breakpoint-mobile) {
+        position: static;
+        justify-content: space-between;
+        margin: 0 0 30px 0;
+        width: 100%;
+        font-size: 16px;
+      }
+
+      .bon {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+          svg {
+            path {
+              stroke: $color-body-secondary;
+            }
+          }
+        }
+
+      }
+
+      .prev {
+        svg {
+          margin: 0 9px 0 0;
+        }
+      }
+
+      .next {
+        svg {
+          margin: 0 0 0 9px;
+        }
+      }
+
+      .curr_slide {
+        width: 145px;
+        text-align: center;
+
+        b {
+          color: $color-body-secondary;
+          font-weight: normal;
+          display: inline-block;
+          padding: 0 4px;
+        }
+
+      }
+
+    }
+
+    &-scroll {
+      display: none;
+    }
+
+    .inner {
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    &-table {
+      $border-radius: 4px;
+
+      background-color: #fff;
+      border-radius: $border-radius;
+      border: none;
+      position: relative;
+      z-index: 2;
+
+      thead {
+
+        > tr {
+
+          > th {
+            background-color: $color-secondary;
+            color: #fff;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 30px;
+            border: none;
+            white-space: nowrap;
+            @media screen and (max-width: $breakpoint-medium) {
+              padding: 18px;
+            }
+
+            &:first-child {
+              border-top-left-radius: $border-radius;
+            }
+
+            &:last-child {
+              border-top-right-radius: $border-radius;
+            }
+
+          }
+
+        }
+
+      }
+
+      tbody {
+
+        > tr {
+
+          > td {
+            padding: 20px 30px;
+            border: none;
+            font-weight: normal;
+            font-size: 16px;
+            @media screen and (max-width: $breakpoint-medium) {
+              padding: 20px 18px;
+            }
+
+            &:not(.no-border) {
+              border-bottom: 1px solid $color-secondary-light;
+            }
+          }
+
+          &:not(:last-child) {
+
+            > td {
+
+            }
+
+          }
+
+          &:not(.no-hover) {
+
+            &:hover {
+
+              > td {
+                background-color: $color-secondary-light;
+              }
+
+            }
+
+          }
+
+          &:last-child {
+            > td {
+              &:first-child {
+                border-bottom-left-radius: $border-radius;
+              }
+              &:last-child {
+                border-bottom-right-radius: $border-radius;
+              }
+            }
+          }
+
+        }
+
+      }
+
+      &-info {
+        position: absolute;
+        z-index: 3;
+        background-color: #8892b9;
+        padding: 10px 33px;
+        left: 0;
+        right: 0;
+        top: 63px;
+        display: none;
+        align-items: center;
+        justify-content: flex-start;
+        color: #fff;
+        font-weight: normal;
+        font-size: 16px;
+        @media screen and (max-width: $breakpoint-medium) {
+          display: flex;
+        }
+        @media screen and (max-width: $breakpoint-phone-small) {
+          padding: 10px 15px;
+        }
+
+        p {
+          width: 100%;
+          max-width: 150px;
+          padding: 0 0 0 30px;
+          margin: 0;
+          @media screen and (max-width: $breakpoint-phone-small) {
+            padding: 0 0 0 15px;
+          }
+        }
+
+        .close {
+          position: absolute;
+          z-index: 4;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 18px;
+          display: flex;
+          align-items: center;
+          @media screen and (max-width: $breakpoint-phone-small) {
+            right: 15px;
+          }
+        }
+
+      }
+
+    }
+
+    .slick {
+      &-next,
+      &-prev,
+      &-dots {
+        display: none !important;
+      }
+    }
+
+  }
+
+}
+
+//Chart chartjs-tooltip-key
+#chartjs {
+  $border-radius: 4px;
+
+  &-tooltip {
+    position: absolute;
+    pointer-events: none;
+
+    table {
+      background: #fff;
+      box-sizing: border-box;
+      border-radius: $border-radius;
+      width: 307px;
+      margin-top: 30px;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 8px 30px rgba(0, 20, 160, 0.1);
+      border: none;
+
+      thead,
+      thead > tr,
+      thead > tr > th {
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+      }
+
+      th {
+        background: $color-secondary;
+        border-radius: 4px 4px 0px 0px;
+        padding: 10px 12px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.7;
+        color: #fff;
+      }
+
+      tr {
+        border: none;
+
+        &:last-child {
+
+          > td {
+            border-bottom-left-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+          }
+
+        }
+
+      }
+
+      td {
+        font-size: 14px;
+        color: $color-body;
+        padding: 9px 12px 7px;
+        border: none;
+      }
+
+      b {
+        font-weight: normal;
+        font-size: 16px;
+        display: block;
+        float: right;
+        width: 80px;
+        border-left: 1px dashed #E0E0E0;
+        text-align: right;
+      }
+
+    }
+
+  }
+
+}
+
+.chartjs {
+  &-tooltip {
+    &-key {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      margin-right: 8px;
+      display: inline-block;
+      margin-bottom: 2px;
+    }
+  }
+}
+
+//Tippy
+.tippy {
+
+  &-box {
+    box-shadow: 0 8px 30px rgb(0 20 160 / 10%);
+    border-radius: 4px;
+    background: #fff;
+  }
+
+  &-arrow {
+    color: #fff;
+  }
+}
+
+.toprint {
+  display: none;
+}
+
+.print__logo {
+  margin-right: 300px;
+}
+
+@media print {
+  header,
+  .noprint,
+  .mortgage_report__approved-container-right,
+  footer,
+  #wpadminbar,
+  .connect-lending-experts,
+  .mortgage_report__shedule-header,
+  .mortgage_report__shedule-content {
+    display: none !important;
+  }
+  .mortgage_report__approved {
+    margin: -30px 0 30px;
+  }
+  #amortization-chart {
+    transform: scale(0.9);
+  }
+  .mortgage_report__amort-title {
+    padding-left: 40px;
+  }
+  .mortgage_report__approved-text {
+    color: $color-title !important;
+    ul, small {
+      color: $color-title !important;
+    }
+  }
+  .mortgage_report__heading {
+    height: 180px;
+    padding: 30px 0;
+  }
+  .mortgage_report__notprint .col-md-6 {
+    width: 530px;
+  }
+
+  .mortgage_report__approved {
+    margin: 0 0 30px;
+  }
+  .toprint {
+    display: block;
+    table {
+      width: 100% !important;
+      tr {
+        width: 100% !important;
+        td {
+          width: 17% !important;
+        }
+      }
+    }
+  }
+  #wrapper {
+    padding-top: 0;
+  }
+}
+
+.mortgage_report__amort-tooltip {
+  @media screen and (max-width: $breakpoint-medium) {
+
+  }
+  #chartjs-tooltip {
+    @media screen and (max-width: $breakpoint-medium) {
+      position: relative;
+      top: auto !important;
+      left: auto !important;
+    }
+    table {
+      display: table;
+      @media screen and (max-width: $breakpoint-phone) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-phone) {
+  .mortgage_report__notprint-column{
+    .row{
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  .mortgage_report__amort {
+    margin: 0 0 40px;
+  }
+}

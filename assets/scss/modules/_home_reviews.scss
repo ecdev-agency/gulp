@@ -1,0 +1,92 @@
+.reviews {
+  a:link, a:visited {
+    text-decoration: none;
+  }
+
+  .company_rev
+  {
+    display: inline-block;
+
+
+    img {
+      display: inline-block;
+      object-fit: contain;
+      height: auto;
+      width: auto;
+      max-width: 138px;
+      vertical-align: middle;
+      margin-bottom: 15px;
+    }
+  }
+
+  .stars {
+    margin-bottom: 13px;
+    display: block;
+    line-height: 0.5;
+
+
+    span {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin: 0 2px;
+      background: url("../img/icons/star.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+  h2 {
+    margin-bottom: 32px;
+  }
+}
+
+
+.mark_rev {
+  font-family: 'Rubik', sans-serif;
+  font-size: 40px;
+  line-height: 140%;
+  color: $color-primary;
+  margin-bottom: 9px;
+}
+
+.count_reviews {
+  font-family: 'Rubik';
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  margin-bottom: 8px;
+  color: $color-inactive;
+  font-weight: 500;
+}
+
+
+@media screen and (max-width: 992px) {
+  .reviews .item {
+    margin-bottom: 32px;
+    min-height: 130px;
+  }
+  .reviews + .gap {
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mark_rev {
+    display: none;
+  }
+  .reviews .stars span {
+    width: 22px;
+    margin: 0;
+  }
+  .reviews .item {
+    display: flex;
+    flex-direction: column;
+  }
+  .reviews .stars {
+    margin-bottom: 3px;
+  }
+  .company_rev{
+    order : -1;
+  }
+}

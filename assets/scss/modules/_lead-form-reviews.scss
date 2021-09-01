@@ -1,0 +1,157 @@
+.reviewsWrap {
+  max-width: 440px;
+  margin: 50px auto 45px auto;
+}
+
+.reviews {
+  &__ratingInfo {
+    margin-bottom: 10px;
+  }
+
+  &__ratingText {
+    display: inline-block;
+    margin-left: 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &__rating {
+    margin-right: 5px;
+  }
+
+  &__content {
+    border-radius: 4px;
+    background: #FCFCFC;
+    border: 1px solid #E3E3E3;
+    box-sizing: border-box;
+  }
+
+  &__text {
+    padding: 20px 25px;
+    font-weight: normal;
+    position: relative;
+
+    &:before {
+      content: url("../img/quotes.svg");
+      position: absolute;
+      top: 17px;
+      left: 8px;
+      z-index: 1;
+    }
+
+    * {
+      z-index: 2;
+      position: relative;
+    }
+  }
+
+  &__author {
+    border-top: 1px solid #E3E3E3;
+    padding: 15px 25px;
+    display: flex;
+  }
+
+  &__date {
+    color: #C4C4C4;
+    margin-top: 7px;
+    display: block;
+  }
+
+
+  &__stars {
+    margin-left: auto;
+    path {
+      fill: #FFB45C;
+    }
+    svg {
+      margin-right: 4px;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+
+  &__authorDetails {
+    display: flex;
+    align-items: flex-start;
+    width: calc(100% - 54px);
+  }
+
+
+    &__authorName {
+      font-size: 16px;
+      line-height: 1;
+    }
+
+
+  &__authorLogo {
+    display: inline-block;
+    background-color: #03823F;
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 40px;
+    text-align: center;
+    color: $color-white;
+    margin-right: 17px;
+  }
+}
+
+.slick {
+  &-slider {
+    opacity: 0;
+
+    &.slick-initialized {
+      opacity: 1;
+    }
+  }
+
+  &-arrow {
+    cursor: pointer;
+    position: absolute;
+    top: calc(50% - 20px);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #E3E3E3;
+    background-color: $color-white;
+
+    &:before {
+      content: '';
+      background: url("../img/arrow.svg") no-repeat center;
+      background-size: contain;
+      width: 7px;
+      height: 14px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: -2px;
+      margin: auto;
+    }
+
+    &:hover {
+      background-color: #F1F9ED;
+    }
+  }
+
+  &-prev {
+    left: -70px;
+  }
+
+  &-next {
+    right: -70px;
+
+    &:before {
+      left: 0;
+      right: -2px;
+      transform: rotate(180deg);
+    }
+  }
+}

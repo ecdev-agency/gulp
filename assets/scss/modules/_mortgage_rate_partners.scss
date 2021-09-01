@@ -1,0 +1,98 @@
+
+#partners_section {
+  margin-bottom: -45px;
+
+  .partner-logo-img {
+    width: auto;
+    display: inline-block;
+  }
+
+  .partners-section-items {
+
+    .partners-section-item {
+      margin-bottom: 45px;
+
+      &:last-child {
+
+      }
+
+
+
+      img {
+        display: inline-block;
+        height: 40px;
+        width: auto;
+        max-width: 138px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: $breakpoint-medium) {
+
+  #partners_section {
+    /* .partners-section-items {
+      flex-wrap: wrap;
+     .partners-section-item {
+        margin-left: 16px;
+        margin-right: 16px;
+        margin-bottom: 41px;
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+        flex: 1 1 29%;
+        max-height: 32px;
+      }
+    }*/
+    .partners-section-items {
+
+      .partners-section-item {
+
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-medium) {
+
+  #partners_section {
+    .partners-section-items {
+
+      .partners-section-item {
+        /*&:nth-last-of-type(-n+3) {
+          margin-bottom: 0;
+        }*/
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+
+  #partners_section {
+    .partners-section-items {
+
+      .partners-section-item {
+
+        .partner-logo-img {
+
+        }
+
+        &:nth-child(odd) {
+
+        }
+
+        &:nth-child(even) {
+
+        }
+
+        &:nth-last-of-type(-n+2) {
+
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,86 @@
+.before-submit-form-result {
+  .sub-title {
+    margin-bottom: 15px;
+  }
+
+  .questions-list {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+
+    .question-item {
+      border-top: 1px solid $color-secondary-light;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      list-style: none;
+      transition: all .3s;
+      position: relative;
+      background-position: right 20px center;
+      background-repeat: no-repeat;
+
+      &:not(.disabled) {
+        background-image: url("data:image/svg+xml,%3Csvg width='7' height='11' viewBox='0 0 7 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5.5L1 10' stroke='%23#{$_color-secondary}' stroke-width='1.5'/%3E%3C/svg%3E%0A");
+      }
+
+      &:last-child {
+        border-bottom: 1px solid $color-secondary-light;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: $color-secondary-light-plus;
+        background-image: url("data:image/svg+xml,%3Csvg width='7' height='11' viewBox='0 0 7 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5.5L1 10' stroke='%23#{$_color-primary}' stroke-width='1.5'/%3E%3C/svg%3E%0A");
+      }
+
+      .question-title {
+        color: $color-body-secondary;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .question-answer {
+        color: $color-body;
+        font-size: 16px;
+        line-height: 170%;
+      }
+
+      .col {
+        width: 50%;
+        padding: 20px;
+      }
+    }
+  }
+}
+
+
+@media only screen and (min-width: $breakpoint-phone-small) and (max-width: $breakpoint-mobile-iphone) and (orientation: landscape) {
+  .before-submit-form-result {
+    .container-medium {
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-phone) and (orientation: portrait) {
+  .before-submit-form-result {
+    .container-medium {
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .questions-list {
+      .question-item {
+        flex-direction: column;
+        padding: 10px 40px 10px 0;
+        .col {
+          width: 100%;
+          padding: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+/**
+* Validate form style for Jquery Validation JS
+ */
+
+form {
+  &.jquery-form-validate {
+    label {
+      &.error {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+        color: $color-validate-field;
+        padding-top: 15px;
+      }
+    }
+
+    input {
+      &.error {
+        /*border: 2px solid $color-validate-field;*/
+        border-color: $color-white;
+        box-shadow: 0 0 0 1.5px $color-validate-field;
+      }
+    }
+  }
+}

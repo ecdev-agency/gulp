@@ -1,0 +1,280 @@
+.singleGuide {
+  padding: 15px 0 100px 0;
+  @include media(sm) {
+    padding: 30px 0;
+  }
+  &__mainContent{
+    @include media_min(md) {
+      padding-left: 40px;
+    }
+  }
+  &__author {
+    margin-bottom: 23px;
+  }
+
+  &__authorIcon {
+    background-color: $color-secondary-hover;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    margin-right: 11px;
+  }
+
+  &__date {
+    span {
+      line-height: 17px;
+      display: inline-block;
+      color: $color-body-secondary;
+      @include media(xs) {
+        display: block;
+      }
+    }
+
+    time {
+      color: $color-body;
+      margin-left: 5px;
+    }
+  }
+
+  &__dateItem + &__dateItem {
+    margin-left: 43px;
+    position: relative;
+    @include media(xs) {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+
+    &:before {
+      content: '';
+      width: 1px;
+      height: 16px;
+      background-color: $color-inactive;
+      position: absolute;
+      left: -21px;
+      top: 0;
+      @include media(xs) {
+       display:none;
+      }
+    }
+  }
+
+  &__content {
+    margin-top: 15px;
+    margin-bottom: 60px;
+    h2 {
+      margin-bottom: 15px;
+      margin-top: 45px;
+    }
+
+    h3 {
+      margin-top: 30px;
+      margin-bottom: 15px;
+
+      &:not(.no-rates) {
+        display: flex;
+
+        &[align = center] {
+          justify-content: center;
+          padding-right: 35px;
+          @media (max-width: $breakpoint-mobile) {
+            padding-right: 0;
+          }
+        }
+
+        a {
+          font-size: 16px;
+          display: inline-block;
+          padding: 2px 20px;
+          position: relative;
+          background: $btn-hover-bg;
+          color: $color-primary !important;
+          line-height: 37px;
+          border-radius: 8px 0 0 8px;
+          max-width: 100%;
+
+          &:hover {
+            text-decoration: none;
+          }
+
+          &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -37px;
+            width: 37px;
+            height: 100%;
+            border-radius: 0 8px 8px 0;
+            background: url('../../assets/img/samm/wihte_arr.svg') $color-primary no-repeat;
+            background-position: right 12px center;
+          }
+
+          @media screen and (max-width: $breakpoint-phone) {
+            margin-left: 0;
+            width: 100%;
+            text-align: left;
+            line-height: 1.55;
+            padding: 6px 40px 6px 20px;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            &:after {
+              width: 45px;
+              right: 0;
+              background: url('../img/samm/arrow-right-green.svg') $btn-hover-bg no-repeat center;
+              background-size: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    ul {
+      font-weight: 400;
+      padding-left: 30px;
+      line-height: 32px;
+
+      li {
+        margin-bottom: 13px;
+      }
+    }
+
+    ol {
+      font-weight: 400;
+      padding-left: 30px;
+      line-height: 32px;
+
+      li {
+        margin-bottom: 13px;
+      }
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.singleGuideSidebar {
+  max-height: 485px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-color: #B0B8CF #E7EAF3;
+  scrollbar-width: thin;
+  @include media(sm) {
+    max-height: 100%;
+  }
+
+  &::-webkit-scrollbar-button {
+    width: 5px;
+    height: 0
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #E7EAF3;
+    border: none;
+    border-radius: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: #B0B8CF;
+    border: none;
+    box-shadow: none;
+  }
+
+  &::-webkit-resizer {
+    width: 5px;
+    height: 0;
+  }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+
+.guideList {
+  list-style: none;
+  padding: 0 15px 0 0;
+  &__item {
+    position: relative;
+    margin-bottom: 15px;
+    padding-left: 20px;
+
+    &:before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: $color-primary;
+      position: absolute;
+      left: 0;
+      top: 10px;
+    }
+  }
+
+  &__cat {
+    cursor: pointer;
+    line-height: 27px;
+    font-weight: 400;
+    color: $color-title;
+    &-active{
+      &:before{
+        content:'';
+        position: absolute;
+        right: -10px;
+        top:10px;
+        border-style:solid;
+        border-color: $color-secondary;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(-135deg);
+      }
+    }
+    &:hover{
+      color: $color-body-secondary;
+    }
+  }
+
+  &__subMenu {
+    padding: 0;
+    display: none;
+    list-style: none;
+    margin-top: 10px;
+    &-open{
+      display: block;
+    }
+  }
+  &__guide{
+    display: block;
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    &:before{
+      content:'';
+      position: absolute;
+      left: 0;
+      top:10px;
+      border-style:solid;
+      border-color: $color-secondary;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(-45deg);
+    }
+  }
+  &__guideLink{
+    font-weight: 400;
+    font-size: $smallsize;
+    line-height: $smallineheight;
+    color: $color-title;
+    margin-bottom: 10px;
+    &-active{
+      color: $color-primary;
+      text-decoration: none;
+    }
+    &:hover{
+      text-decoration: none;
+      color: $color-body-secondary;
+    }
+  }
+}

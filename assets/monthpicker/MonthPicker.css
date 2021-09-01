@@ -1,0 +1,304 @@
+/*
+The jQuery UI Month Picker Version 3.0.4
+https://github.com/KidSysco/jquery-ui-month-picker/
+
+Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see
+<http://www.gnu.org/licenses/gpl-3.0.txt>.
+*/
+
+.month-picker {
+    display: inline-block;
+    position: absolute;
+    z-index: 9999;
+    width: 315px;
+    margin-top: -2px;
+    background-color: #fff;
+    box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.1);
+}
+
+.month-picker:before {
+    content: 'Please select start month and year';
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #7991B6;
+    padding: 20px 15px;
+    background-color: #fff;
+}
+
+.month-picker table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 2px 2px;
+    margin-bottom: 10px;
+}
+
+.month-picker td {
+    padding: 0px;
+}
+
+.month-picker .ui-button {
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 28px;
+    color: #3d3d3d;
+}
+
+.month-picker .ui-button:hover {
+    text-decoration: none;
+}
+
+.month-picker [role="button"] {
+    -webkit-appearance: unset;
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+table.month-picker-year-table{
+    border: none;
+    border-top: 1px solid #E7EAF3;
+}
+/*
+Prevents the button labels from maving sligtly to the left
+when applying the width CSS property to the buttons.
+See: .month-picker-month-table button { width: 4.3em; }
+*/
+.month-picker .ui-button-text {
+  padding: .4em 0;
+}
+
+.month-picker-year-table {
+    width: 100%;
+    padding: 22px 22px 0;
+    /*
+    Makes sure the next/previous/jump years buttons are not unnecessarily
+    selected if the user clicks them a couple of times fast.
+    */
+    -ms-user-select: none; /* IE 10+ */
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/*
+The plugin uses buttons with a transparent background in the year-table
+(aka header) in order to look consistent with jQuery UI datepicker and to
+make the year title a button that blends into the heading in the default state.
+
+The plugin does this by removing the .ui-state-default class from (in MonthPicker.js)
+the a tags (buttons) which also ends up removing the 1px border that it applies.
+
+To prevent the button from resizing and moving everything around when you hover
+in and out, we use a carefully constructed selector, which gets overroden by the
+more specific .ui-state-hover/actove class selectors in the jquery-ui.css
+that apply the visible borders that we want.
+
+This selector applies a 1px transparent border that keeps the button
+in the same size, but it doesen't hide the borders that .ui-state-hover/actove give us.
+*/
+.month-picker-year-table a {
+    border: 1px solid transparent;
+}
+body .ui-widget{
+    font-family: inherit;
+}
+/*
+Sets the size of the next/previous buttons,
+and makes the buttons in the heading (year-table) sligtly bigger,
+and removes the pointer cursor from the buttons in the heading (year-table).
+*/
+.month-picker-year-table .ui-button {
+    width: 30px;
+    height: 30px;
+    margin: 0;
+}
+
+.month-picker-year-table .month-picker-title {
+    text-align: center;
+}
+
+.month-picker-year-table .month-picker-title .ui-button {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+}
+
+.month-picker-title .ui-button {
+    font-weight: 400;
+}
+
+.month-picker-previous .ui-button,
+.month-picker-next .ui-button {
+    cursor: pointer;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+.month-picker-previous .ui-button {
+     background-image: url(../../assets/img/icons/calendar-prev.svg);
+ }
+
+.month-picker-previous .ui-button:hover {
+    background-image: url("data:image/svg+xml,%3Csvg width='9' height='16' viewBox='0 0 9 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 1L2 8L8 15' stroke='%23009821' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+.month-picker-previous .ui-button .ui-button-icon{
+    display: none;
+}
+
+.month-picker-next .ui-button {
+    background-image: url(../../assets/img/icons/calendar-next.svg);
+}
+
+.month-picker-next .ui-button:hover {
+    background-image: url("data:image/svg+xml,%3Csvg width='9' height='16' viewBox='0 0 9 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 8L1 15' stroke='%23009821' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+.month-picker-next .ui-button .ui-button-icon{
+    display: none;
+}
+
+.month-year-input {
+    cursor: pointer;
+    background-position: 96% 50%;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='18' viewBox='0 0 16 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='3' width='14' height='14' rx='2' stroke='%232C3972' stroke-width='2'/%3E%3Crect x='3' width='2' height='3' rx='1' fill='%232C3972'/%3E%3Crect x='11' width='2' height='3' rx='1' fill='%232C3972'/%3E%3Crect x='1' y='6' width='14' height='2' fill='%232C3972'/%3E%3Crect x='3' y='9' width='2' height='2' rx='1' fill='%232C3972'/%3E%3Crect x='3' y='13' width='2' height='2' rx='1' fill='%232C3972'/%3E%3Crect x='7' y='9' width='2' height='2' rx='1' fill='%232C3972'/%3E%3Crect x='7' y='13' width='2' height='2' rx='1' fill='%232C3972'/%3E%3Crect x='11' y='9' width='2' height='2' rx='1' fill='%232C3972'/%3E%3Crect x='11' y='13' width='2' height='2' rx='1' fill='%232C3972'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+ }
+
+.month-year-input:focus {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='18' viewBox='0 0 16 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='3' width='14' height='14' rx='2' stroke='%23009821' stroke-width='2'/%3E%3Crect x='3' width='2' height='3' rx='1' fill='%23009821'/%3E%3Crect x='11' width='2' height='3' rx='1' fill='%23009821'/%3E%3Crect x='1' y='6' width='14' height='2' fill='%23009821'/%3E%3Crect x='3' y='9' width='2' height='2' rx='1' fill='%23009821'/%3E%3Crect x='3' y='13' width='2' height='2' rx='1' fill='%23009821'/%3E%3Crect x='7' y='9' width='2' height='2' rx='1' fill='%23009821'/%3E%3Crect x='7' y='13' width='2' height='2' rx='1' fill='%23009821'/%3E%3Crect x='11' y='9' width='2' height='2' rx='1' fill='%23009821'/%3E%3Crect x='11' y='13' width='2' height='2' rx='1' fill='%23009821'/%3E%3C/svg%3E");
+}
+/*
+The buttons in the heading (year-table) are slightly shrinked, but because jQuery ui and
+the .month-picker .ui-button-text rule at the top of this CSS file apply some
+padding which results in the button text being moved to the bottom of
+the button.
+
+This rule removes the unnecessary padding so the text in
+the jump years button will be vericaly centred.
+*/
+.month-picker-year-table .ui-button-text {
+    padding: 0;
+}
+
+.month-picker-month-table {
+    margin-bottom:  8px;
+    border: none;
+}
+
+.month-picker-month-table td .ui-state-active {
+    background: #2C3972;
+    border-radius: 4px;
+    color: #fff;
+    border: none;
+    font-weight: 400;
+}
+.month-picker-month-table td {
+    height: 35px;
+    text-align: center;
+    border: none;
+}
+
+/*
+Makes sure the buttons stay in the same size when swithching
+to the Jump years menu.
+this also ensures that the entire menu dosen't resize itself
+in response to the slightly bigger buttons in the Jump years menu.
+ */
+.month-picker-month-table .ui-button {
+    width: 70px;
+    margin-top: 7px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    transition: none;
+    padding: 11px 0;
+}
+
+.month-picker-month-table .ui-button:hover {
+    color: #fff;
+    background: #2C3972;
+}
+
+.month-picker-open-button {
+    height: 20px;
+    width: 20px;
+    vertical-align: bottom;
+}
+
+.month-picker-invalid-message {
+    display: none;
+    background-color: Yellow;
+}
+
+.month-picker-disabled {
+    background-color: #e1e1e1;
+}
+
+.ui-state-disabled {
+    cursor: default !important;
+    pointer-events: none;
+}
+
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
+    opacity: .35;
+    filter: Alpha(Opacity=35);
+    background-image: none;
+}
+
+/* We use html here because we need a greater specificity to make sure disabled
+works properly when clicked or hovered */
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+    border: 1px solid #c5c5c5;
+    background: #f6f6f6;
+    font-weight: normal;
+    color: #454545;
+}
+
+.ui-state-disabled,
+.ui-widget-content .ui-state-disabled,
+.ui-widget-header .ui-state-disabled {
+    opacity: .35;
+    filter:Alpha(Opacity=35); /* support: IE8 */
+    background-image: none;
+}
+.ui-state-disabled .ui-icon {
+    filter:Alpha(Opacity=35); /* support: IE8 - See #6059 */
+}
+
+@media (max-width: 1024px) {
+    .month-picker {
+        width: auto;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .month-picker {
+        width: 370px;
+        margin-left: -20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .month-picker {
+        width: auto;
+        margin-left: 0;
+        left: 15px !important;
+        right: 15px;
+    }
+}

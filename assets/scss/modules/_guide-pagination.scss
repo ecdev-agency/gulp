@@ -1,0 +1,61 @@
+.guidePagination {
+  margin-top: 90px;
+  @include media(sm) {
+    margin-top:30px;
+  }
+  .page-numbers {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: $color-body;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0 3px;
+    text-align: center;
+    svg{
+      width: auto;
+      height: 18px;
+    }
+  }
+
+  a {
+    &:hover {
+      color: $color-primary;
+      text-decoration: none;
+    }
+  }
+
+  .prev {
+    transform: rotate(180deg);
+    color: $color-body-secondary;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      color: $color-body;
+    }
+  }
+  .next {
+    color: $color-body-secondary;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      color: $color-body;
+    }
+  }
+
+  .current {
+    border-color: $color-body-secondary;
+    color: $color-body-secondary;
+
+    &:hover {
+      color: $color-body-secondary;
+    }
+  }
+}

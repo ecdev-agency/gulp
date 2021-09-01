@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Rubik-Medium';
+  src: url('Rubik-Medium.eot');
+  src: url('Rubik-Medium.eot?#iefix') format('embedded-opentype'),
+       url('Rubik-Medium.svg#Rubik-Medium') format('svg'),
+       url('Rubik-Medium.ttf') format('truetype'),
+       url('Rubik-Medium.woff') format('woff'),
+       url('Rubik-Medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+

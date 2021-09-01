@@ -1,0 +1,80 @@
+.get_started_section {
+  padding: 43px 0;
+  background-color: #EFEFEF;
+  background-image: url('../img/samm/green_roof.jpg');
+  background-position: center;
+  background-size: cover;
+
+
+  .actions {
+    text-align: right;
+
+    .get-started-btn {
+      width: 252px;
+    }
+
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 170%;
+    color: $color-white;
+
+    a {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 140%;
+      margin-top: 15px;
+      color: $color-white;
+      display: block;
+      position: relative;
+      padding-left: calc(24px + 15px);
+      &:hover{
+        text-decoration: none;
+      }
+
+      &:before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        background: url(../img/icons/call_24px.svg) no-repeat;
+        top: calc(50% - 10px);
+        left: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-medium) {
+  .get_started_section p {
+    margin-bottom: 32px;
+    font-size: 16px;
+    a{
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .get_started_section {
+
+
+    .actions {
+      text-align: center;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 160%;
+
+      a {
+        font-size: 16px;
+        line-height: 160%;
+      }
+    }
+
+  }
+}

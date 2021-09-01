@@ -1,0 +1,120 @@
+#multiple_factors_section {
+
+
+  .multiple-cat-row {
+    column-count: 2;
+    column-gap: 30px;
+    column-rule: 1px solid transparent;
+  }
+
+  .multiple-categories {
+    margin-top: 55px;
+
+
+    .multiple-cat-container {
+      break-inside: avoid;
+      display: inline-block;
+    }
+
+    .multiple-cat {
+      margin-bottom: 30px;
+      padding: 30px;
+      background: $color-secondary-light-plus;
+
+      .multiple-cat-title {
+        position: relative;
+        margin-bottom: calc(15px * 2);
+
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: -15px;
+          border-top: 3px solid $color-primary;
+          width: 30px;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: $breakpoint-medium) {
+  #multiple_factors_section {
+    .multiple-cat-row {
+      column-count: 1;
+    }
+
+    .img-col {
+      min-width: 50%;
+      margin-left: 0;
+    }
+
+    .multiple-categories {
+      .multiple-cat-container {
+        margin-bottom: 15px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .multiple-cat {
+        margin-bottom: 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: $breakpoint-mobile) {
+  #multiple_factors_section {
+
+
+    .multiple-cat-row {
+
+    }
+
+    .multiple-categories {
+
+
+      .multiple-cat-container {
+        flex-basis: 100%;
+
+        &:nth-child(odd) {
+          .multiple-cat {
+            padding-right: 20px;
+          }
+        }
+
+        .multiple-cat {
+          padding-left: 20px;
+        }
+
+        &:nth-child(even) {
+          .multiple-cat {
+            padding-left: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-phone) {
+  #multiple_factors_section {
+    .multiple-cat-row {
+      -webkit-column-count: 1;
+      -moz-column-count: 1;
+      column-count: 1;
+    }
+
+    .multiple-categories {
+      margin-top: 36px;
+    }
+  }
+}

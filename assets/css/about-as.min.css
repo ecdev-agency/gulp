@@ -1,0 +1,151 @@
+/**
+ * Breakpoints
+ */
+/**
+ * Colors
+ */
+/**
+ * Additional variables
+ */
+/**
+ * Mixins
+ */
+.right-sidebar {
+  margin-bottom: 84px; }
+
+.appeals_item {
+  padding: 15px;
+  border: 1px solid #C4C4C4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+  margin-bottom: 16px; }
+  .appeals_item:hover {
+    background-color: rgba(115, 192, 71, 0.1);
+    border: 1px solid rgba(115, 192, 71, 0.1); }
+  .appeals_item .holder {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap; }
+  .appeals_item .title {
+    font-family: 'Rubik-Medium', sans-serif;
+    font-size: 20px;
+    line-height: 140%;
+    color: #5d5d5d;
+    font-size: 20px;
+    margin-bottom: 0px;
+    margin-top: 9px; }
+  .appeals_item .sidebar-appeals-icon {
+    opacity: .2; }
+  .appeals_item .btn {
+    margin-top: 20px; }
+
+.g_rates {
+  padding: 15px;
+  border: 1px solid #c4c4c4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+  margin-bottom: 16px; }
+  .g_rates .count {
+    font-size: 14px;
+    line-height: 140%;
+    color: #c4c4c4; }
+  .g_rates .google-logo {
+    display: block;
+    margin-bottom: 6.5px; }
+  .g_rates .stars {
+    margin-bottom: 4px;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline; }
+  .g_rates b {
+    font-size: 16px;
+    font-weight: 300;
+    margin-left: 5px;
+    margin-top: -1px;
+    color: #c4c4c4; }
+  .g_rates span {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 0 3px;
+    background: url(../img/icons/star.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain; }
+
+.sam_form .gform_heading {
+  margin-bottom: 0; }
+  .sam_form .gform_heading .gform_title {
+    display: none; }
+
+.sam_form .gform_wrapper ul.gform_fields li.gfield {
+  padding-right: 0; }
+
+.sam_form .gform_wrapper span.gform_description {
+  font-family: 'Rubik-Medium', sans-serif;
+  font-size: 19px;
+  line-height: 140%;
+  color: #5d5d5d;
+  width: 100%; }
+
+.sam_form .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+  padding-left: 16px; }
+
+.sam_form span.name_first, .sam_form span.name_last {
+  position: relative; }
+  .sam_form span.name_first label, .sam_form span.name_last label {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    font-family: 'Rubik-Regular', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #828282; }
+
+.sam_form .gform_wrapper label.gfield_label, .sam_form .gform_wrapper legend.gfield_label {
+  font-family: 'Rubik-Regular', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #828282; }
+
+.sam_form .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html {
+  font-family: 'Rubik-Regular', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #828282; }
+
+.sam_form .gform_wrapper .gform_footer input.button,
+.sam_form .gform_wrapper .gform_footer input[type=submit],
+.sam_form .gform_wrapper .gform_page_footer input.button,
+.sam_form .gform_wrapper .gform_page_footer input[type=submit] {
+  display: block;
+  width: 100%;
+  height: 48px;
+  background: #73C047;
+  border-radius: 8px;
+  line-height: 47px;
+  font-family: 'Rubik-Medium', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  color: #FFFFFF;
+  border: none; }
+  .sam_form .gform_wrapper .gform_footer input.button:hover,
+  .sam_form .gform_wrapper .gform_footer input[type=submit]:hover,
+  .sam_form .gform_wrapper .gform_page_footer input.button:hover,
+  .sam_form .gform_wrapper .gform_page_footer input[type=submit]:hover {
+    -webkit-transition: all ease-in-out 330ms;
+    -o-transition: all ease-in-out 330ms;
+    transition: all ease-in-out 330ms;
+    -webkit-box-shadow: 0 8px 8px rgba(44, 44, 44, 0.12);
+            box-shadow: 0 8px 8px rgba(44, 44, 44, 0.12);
+    cursor: pointer; }
+
+@media screen and (max-width: 992px) {
+  .g_rates .text + img {
+    max-width: 65px; }
+  .appeals_item .title + img {
+    max-width: 20%; } }

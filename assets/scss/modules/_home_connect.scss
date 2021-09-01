@@ -1,0 +1,41 @@
+.home_connect {
+  padding: 80px 0;
+  background-image: url('/wp-content/uploads/2021/03/sec_back-min.jpg');
+  background-position: center;
+  background-size: cover;
+  h2 {
+    color: $color-white;
+    margin-bottom: 16px;
+  }
+
+  a.tel {
+    color: $color-white;
+    font-size: 32px;
+    line-height: 140%;
+    font-family: 'Rubik', sans-serif;
+    position: relative;
+    font-weight: 500;
+    &:before{
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: -30px;
+      width: 24px;
+      height: 24px;
+      background: url("../img/icons/phone.svg") no-repeat center;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home_connect a.tel{
+    font-size: 24px;
+    line-height: 140%;
+  }
+  .home_connect {
+    padding: 40px 0;
+  }
+  .home_connect a.tel:before{
+    top: 3px;
+  }
+}

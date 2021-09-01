@@ -1,0 +1,482 @@
+@font-face {
+	font-family: "icons";
+	src: url('../fonts/icons/icons.eot');
+	src: url('../fonts/icons/icons.eot?#iefix') format('eot'),
+		url('../fonts/icons/icons.woff2') format('woff2'),
+		url('../fonts/icons/icons.woff') format('woff'),
+		url('../fonts/icons/icons.ttf') format('truetype'),
+		url('../fonts/icons/icons.svg#icons') format('svg');
+}
+
+@mixin icon-styles {
+	font-family: "icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+}
+
+%icon {
+	@include icon-styles;
+}
+
+@function icon-char($filename) {
+	$char: "";
+
+	@if $filename == accredited_business {
+		$char: "\E001";
+	}
+	@if $filename == arrow-down-black {
+		$char: "\E002";
+	}
+	@if $filename == arrow-down {
+		$char: "\E003";
+	}
+	@if $filename == arrow-right-zip {
+		$char: "\E004";
+	}
+	@if $filename == arrow-right {
+		$char: "\E005";
+	}
+	@if $filename == arrow-up-black {
+		$char: "\E006";
+	}
+	@if $filename == arrow_green {
+		$char: "\E007";
+	}
+	@if $filename == arrow_grey {
+		$char: "\E008";
+	}
+	@if $filename == arrow_up {
+		$char: "\E009";
+	}
+	@if $filename == bankrate {
+		$char: "\E00A";
+	}
+	@if $filename == big_home_icon {
+		$char: "\E00B";
+	}
+	@if $filename == button_more_mob {
+		$char: "\E00C";
+	}
+	@if $filename == calc-icon {
+		$char: "\E00D";
+	}
+	@if $filename == call_24px {
+		$char: "\E00E";
+	}
+	@if $filename == check-alt {
+		$char: "\E00F";
+	}
+	@if $filename == check-white {
+		$char: "\E010";
+	}
+	@if $filename == check {
+		$char: "\E011";
+	}
+	@if $filename == circle-plus {
+		$char: "\E012";
+	}
+	@if $filename == close-white {
+		$char: "\E013";
+	}
+	@if $filename == comment {
+		$char: "\E014";
+	}
+	@if $filename == cross {
+		$char: "\E015";
+	}
+	@if $filename == dislike {
+		$char: "\E016";
+	}
+	@if $filename == ec-check2 {
+		$char: "\E017";
+	}
+	@if $filename == email-line-opacity {
+		$char: "\E018";
+	}
+	@if $filename == email {
+		$char: "\E019";
+	}
+	@if $filename == error {
+		$char: "\E01A";
+	}
+	@if $filename == facebook {
+		$char: "\E01B";
+	}
+	@if $filename == faq-min {
+		$char: "\E01C";
+	}
+	@if $filename == faq-plus {
+		$char: "\E01D";
+	}
+	@if $filename == google {
+		$char: "\E01E";
+	}
+	@if $filename == google_min {
+		$char: "\E01F";
+	}
+	@if $filename == green_check {
+		$char: "\E020";
+	}
+	@if $filename == guide-home-icon {
+		$char: "\E021";
+	}
+	@if $filename == hand_like {
+		$char: "\E022";
+	}
+	@if $filename == ic_clock {
+		$char: "\E023";
+	}
+	@if $filename == info-blue {
+		$char: "\E024";
+	}
+	@if $filename == info {
+		$char: "\E025";
+	}
+	@if $filename == Instagram {
+		$char: "\E026";
+	}
+	@if $filename == latest-posts-arrow-slider {
+		$char: "\E027";
+	}
+	@if $filename == like {
+		$char: "\E028";
+	}
+	@if $filename == link-blank-icon {
+		$char: "\E029";
+	}
+	@if $filename == link {
+		$char: "\E02A";
+	}
+	@if $filename == linked_in {
+		$char: "\E02B";
+	}
+	@if $filename == loading {
+		$char: "\E02C";
+	}
+	@if $filename == loading1 {
+		$char: "\E02D";
+	}
+	@if $filename == location-gray-icon {
+		$char: "\E02E";
+	}
+	@if $filename == map-marker {
+		$char: "\E02F";
+	}
+	@if $filename == menu {
+		$char: "\E030";
+	}
+	@if $filename == min_arrow {
+		$char: "\E031";
+	}
+	@if $filename == notification {
+		$char: "\E032";
+	}
+	@if $filename == ok-line-white {
+		$char: "\E033";
+	}
+	@if $filename == olive_check {
+		$char: "\E034";
+	}
+	@if $filename == phone-1 {
+		$char: "\E035";
+	}
+	@if $filename == phone {
+		$char: "\E036";
+	}
+	@if $filename == phone_green {
+		$char: "\E037";
+	}
+	@if $filename == phone_grey {
+		$char: "\E038";
+	}
+	@if $filename == play {
+		$char: "\E039";
+	}
+	@if $filename == quote {
+		$char: "\E03A";
+	}
+	@if $filename == quotes {
+		$char: "\E03B";
+	}
+	@if $filename == rqt-fee-worksheet-logo {
+		$char: "\E03C";
+	}
+	@if $filename == rqt-print {
+		$char: "\E03D";
+	}
+	@if $filename == search-icon-white {
+		$char: "\E03E";
+	}
+	@if $filename == see_rates {
+		$char: "\E03F";
+	}
+	@if $filename == show_more_post {
+		$char: "\E040";
+	}
+	@if $filename == star {
+		$char: "\E041";
+	}
+	@if $filename == star_border {
+		$char: "\E042";
+	}
+	@if $filename == submit-arrow-full {
+		$char: "\E043";
+	}
+	@if $filename == subscribe-fill {
+		$char: "\E044";
+	}
+	@if $filename == subscribe {
+		$char: "\E045";
+	}
+	@if $filename == twitter {
+		$char: "\E046";
+	}
+	@if $filename == unit-icon-active {
+		$char: "\E047";
+	}
+	@if $filename == unit-icon {
+		$char: "\E048";
+	}
+	@if $filename == zillow {
+		$char: "\E049";
+	}
+
+	@return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+	&:#{$insert} {
+		@if $extend {
+			@extend %icon;
+		} @else {
+			@include icon-styles;
+		}
+		content: icon-char($filename);
+	}
+}
+
+.icon-accredited_business {
+	@include icon(accredited_business);
+}
+.icon-arrow-down-black {
+	@include icon(arrow-down-black);
+}
+.icon-arrow-down {
+	@include icon(arrow-down);
+}
+.icon-arrow-right-zip {
+	@include icon(arrow-right-zip);
+}
+.icon-arrow-right {
+	@include icon(arrow-right);
+}
+.icon-arrow-up-black {
+	@include icon(arrow-up-black);
+}
+.icon-arrow_green {
+	@include icon(arrow_green);
+}
+.icon-arrow_grey {
+	@include icon(arrow_grey);
+}
+.icon-arrow_up {
+	@include icon(arrow_up);
+}
+.icon-bankrate {
+	@include icon(bankrate);
+}
+.icon-big_home_icon {
+	@include icon(big_home_icon);
+}
+.icon-button_more_mob {
+	@include icon(button_more_mob);
+}
+.icon-calc-icon {
+	@include icon(calc-icon);
+}
+.icon-call_24px {
+	@include icon(call_24px);
+}
+.icon-check-alt {
+	@include icon(check-alt);
+}
+.icon-check-white {
+	@include icon(check-white);
+}
+.icon-check {
+	@include icon(check);
+}
+.icon-circle-plus {
+	@include icon(circle-plus);
+}
+.icon-close-white {
+	@include icon(close-white);
+}
+.icon-comment {
+	@include icon(comment);
+}
+.icon-cross {
+	@include icon(cross);
+}
+.icon-dislike {
+	@include icon(dislike);
+}
+.icon-ec-check2 {
+	@include icon(ec-check2);
+}
+.icon-email-line-opacity {
+	@include icon(email-line-opacity);
+}
+.icon-email {
+	@include icon(email);
+}
+.icon-error {
+	@include icon(error);
+}
+.icon-facebook {
+	@include icon(facebook);
+}
+.icon-faq-min {
+	@include icon(faq-min);
+}
+.icon-faq-plus {
+	@include icon(faq-plus);
+}
+.icon-google {
+	@include icon(google);
+}
+.icon-google_min {
+	@include icon(google_min);
+}
+.icon-green_check {
+	@include icon(green_check);
+}
+.icon-guide-home-icon {
+	@include icon(guide-home-icon);
+}
+.icon-hand_like {
+	@include icon(hand_like);
+}
+.icon-ic_clock {
+	@include icon(ic_clock);
+}
+.icon-info-blue {
+	@include icon(info-blue);
+}
+.icon-info {
+	@include icon(info);
+}
+.icon-Instagram {
+	@include icon(Instagram);
+}
+.icon-latest-posts-arrow-slider {
+	@include icon(latest-posts-arrow-slider);
+}
+.icon-like {
+	@include icon(like);
+}
+.icon-link-blank-icon {
+	@include icon(link-blank-icon);
+}
+.icon-link {
+	@include icon(link);
+}
+.icon-linked_in {
+	@include icon(linked_in);
+}
+.icon-loading {
+	@include icon(loading);
+}
+.icon-loading1 {
+	@include icon(loading1);
+}
+.icon-location-gray-icon {
+	@include icon(location-gray-icon);
+}
+.icon-map-marker {
+	@include icon(map-marker);
+}
+.icon-menu {
+	@include icon(menu);
+}
+.icon-min_arrow {
+	@include icon(min_arrow);
+}
+.icon-notification {
+	@include icon(notification);
+}
+.icon-ok-line-white {
+	@include icon(ok-line-white);
+}
+.icon-olive_check {
+	@include icon(olive_check);
+}
+.icon-phone-1 {
+	@include icon(phone-1);
+}
+.icon-phone {
+	@include icon(phone);
+}
+.icon-phone_green {
+	@include icon(phone_green);
+}
+.icon-phone_grey {
+	@include icon(phone_grey);
+}
+.icon-play {
+	@include icon(play);
+}
+.icon-quote {
+	@include icon(quote);
+}
+.icon-quotes {
+	@include icon(quotes);
+}
+.icon-rqt-fee-worksheet-logo {
+	@include icon(rqt-fee-worksheet-logo);
+}
+.icon-rqt-print {
+	@include icon(rqt-print);
+}
+.icon-search-icon-white {
+	@include icon(search-icon-white);
+}
+.icon-see_rates {
+	@include icon(see_rates);
+}
+.icon-show_more_post {
+	@include icon(show_more_post);
+}
+.icon-star {
+	@include icon(star);
+}
+.icon-star_border {
+	@include icon(star_border);
+}
+.icon-submit-arrow-full {
+	@include icon(submit-arrow-full);
+}
+.icon-subscribe-fill {
+	@include icon(subscribe-fill);
+}
+.icon-subscribe {
+	@include icon(subscribe);
+}
+.icon-twitter {
+	@include icon(twitter);
+}
+.icon-unit-icon-active {
+	@include icon(unit-icon-active);
+}
+.icon-unit-icon {
+	@include icon(unit-icon);
+}
+.icon-zillow {
+	@include icon(zillow);
+}

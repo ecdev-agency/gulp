@@ -1,0 +1,146 @@
+.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.invisible {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.gap {
+  height: 96px;
+}
+
+
+.withoutMP {
+  margin: 0;
+  padding: 0;
+}
+
+.animated {
+  transition: all .25s ease;
+
+  &-long {
+    transition-duration: 0.36s;
+  }
+
+  &-delay {
+    transition-delay: 0.36s;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-horizontalCenter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.flex-verticalCenter {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flex-center {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-spaceBetween {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.flex-end {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.flex,
+.flex-horizontalCenter,
+.flex-verticalCenter,
+.flex-center,
+.flex-spaceBetween {
+  &.row,
+  &.container {
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+img {
+    &.alignleft {
+        float: left;
+        margin: 10px 40px 10px 0;
+    }
+    &.alignright {
+        float: right;
+        margin: 10px 0 10px 40px;
+    }
+    &.aligncenter {
+        float: none;
+        display: block;
+        margin: 10px auto;
+    }
+}
+
+.clear {
+  *zoom: 1;
+
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+
+  &:before {
+    content: " ";
+    display: table;
+  }
+}
+
+.visible-mobile {
+  display: none;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .visible-mobile {
+    display: block;
+  }
+  .hidden-mobile {
+    display: none;
+  }
+}
+
+.darkBlueBg{
+  background-color: $color-secondary;
+}
+.bodySmall {
+  font-size: $smallsize;
+  line-height: $smallineheight;
+}

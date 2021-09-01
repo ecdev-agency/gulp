@@ -1,0 +1,19 @@
+.available {
+  padding: 55px 0;
+  background: #EFEFEF;
+  p {
+    margin-top: 24px;
+    column-count: 2;
+    column-gap: 30px;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 768px) {
+.available{
+  p{
+    column-count: 1;
+    column-gap: 0;
+  }
+}
+}

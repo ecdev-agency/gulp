@@ -1,0 +1,81 @@
+/**
+* Tabulation form input
+* - Compare with tabulation-form-input.js
+* - add class .no-tabulation for exclude tabulation border on custom input
+ */
+
+body:not(.input-focus-outlines) [tabindex]:focus,
+body:not(.input-focus-outlines) button:focus {
+  outline: 0
+}
+
+form {
+  // create prepared transparent border area for exclude after focus box shadow/border artefacts
+  input[type=checkbox],
+  input[type=email],
+  input[type=number],
+  input[type=tel],
+  input[type=text],
+  select,
+  .select2-container--default .select2-selection--single,
+  input[type=checkbox] ~ .circle-checkbox,
+  button,
+  input[type=submit] {
+    box-shadow: 0 0 0 2px transparent;
+  }
+}
+
+body {
+
+  &.input-focus-outlines {
+    form {
+      // for buttons, inputs, selects etc..
+      .select2-selection:not(.no-tabulation):focus,
+      a:not(.no-tabulation):focus,
+      button:not(.no-tabulation):not(.btn-secondary-light):focus,
+      .btn:not(.no-tabulation):not(.btn-secondary-light):focus,
+      input:not(.no-tabulation):not(.btn-secondary-light):focus,
+      select:not(.no-tabulation):focus {
+        box-shadow: 0 0 0 1.5px $tabulation-form-focused-color !important;
+        border-color: $color-white !important;
+        border-width: 1px !important;
+      }
+
+      .fields-group {
+        &.focus {
+          border-color: $color-secondary-light;
+          box-shadow: 0 0 0 1.5px $color-primary;
+        }
+      }
+
+      // for default checkbox
+      input[type=checkbox]:not(.no-tabulation):focus + label {
+        &:before {
+          box-shadow: 0 0 0 1.5px $tabulation-form-focused-color !important;
+        }
+      }
+
+      // for transparent buttons
+      .btn-secondary-light {
+        &:not(.no-tabulation) {
+          &:focus, &:active {
+            &:before {
+              box-shadow: 0 0 0 1.5px $tabulation-form-focused-color !important;
+            }
+          }
+        }
+      }
+
+      // for customized checkbox
+      .custom-checkbox {
+        > input:not(.no-tabulation):focus {
+          + span {
+            &:before {
+              box-shadow: 0 0 0 1.5px $tabulation-form-focused-color !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

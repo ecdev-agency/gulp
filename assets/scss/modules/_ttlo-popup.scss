@@ -1,0 +1,172 @@
+#loan_officer {
+  width: 720px;
+  height: 570px;
+  color: #5D5D5D;
+  max-width: calc(100% - 30px);
+  z-index: 999;
+  left: calc(50% - (720px / 2));
+}
+
+#loan_officer .modal-header {
+  padding: 19px 20px 19px 45px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #C4C4C4;
+}
+
+#loan_officer input[type=text], #loan_officer select, #loan_officer input[type="tel"], #loan_officer input[type="email"] {
+  padding-left: 16px;
+}
+
+#loan_officer #ttlo_form .submit-form {
+  width: 100%;
+  margin-top: 20px;
+}
+
+#loan_officer #ttlo_form .row > div:nth-child(even), #loan_officer #ttlo_form .row:last-child > div {
+  padding-left: 22.5px;
+}
+
+#loan_officer #ttlo_form .row:not(:last-child) > div:nth-child(odd) {
+  padding-right: 22.5px;
+}
+
+#loan_officer #ttlo_form .row:not(:last-child) {
+  margin-bottom: 21px;
+}
+
+#loan_officer #ttlo_form input::placeholder {
+  color: #828282;
+}
+
+#loan_officer #ttlo_form label {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 140%;
+  color: #828282;
+  display: block;
+  margin-bottom: 8px;
+}
+
+#loan_officer .modal-footer {
+  background: #F1F9ED;
+  padding: 28px;
+  text-align: center;
+  position: relative;
+  margin-top: 0px;
+}
+
+
+#loan_officer .modal-footer h2 {
+  margin: 0;
+  color: #73C047;
+}
+
+#loan_officer .modal-header .office-time {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  margin-left: auto;
+  line-height: 140%;
+  margin-right: 45px;
+}
+
+#loan_officer .modal-header .office-time .title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 140%;
+  color: #797979;
+}
+
+#loan_officer .modal-header .office-time .time-value {
+  display: inline-block;
+}
+
+#loan_officer .modal-header .office-time .pacific {
+  color: #797979;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#loan_officer .modal-header .header-title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 140%;
+}
+
+#loan_officer .modal-body {
+  padding: 23px 45px 45px 45px;
+}
+
+#loan_officer .description {
+  max-width: 100%;
+  width: 460px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 180%;
+  text-align: center;
+  color: #797979;
+  min-height: 50px;
+  margin: 0 auto 25px auto;
+}
+
+#loan_officer .modal-close {
+  top: calc(50% - 12.5px);
+}
+
+
+
+@media screen and (max-width: 767px) {
+  #loan_officer #ttlo_form .row > div {
+    margin-bottom: 21px;
+  }
+
+
+  #loan_officer .description {
+    min-height: inherit;
+  }
+
+  #loan_officer #ttlo_form .row:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  #loan_officer #ttlo_form .row > div:nth-child(even), #loan_officer #ttlo_form .row:last-child > div {
+    padding-left: 15px;
+  }
+
+  #loan_officer #ttlo_form .row:not(:last-child) > div:nth-child(odd) {
+    padding-right: 15px;
+  }
+
+}
+
+
+@media screen and (max-width: 550px) {
+
+  #loan_officer .modal-header {
+    display: block;
+  }
+
+  #loan_officer .modal-close {
+    top: 15px;
+  }
+
+  #loan_officer .modal-body {
+    padding: 15px;
+  }
+
+  #loan_officer .modal-header {
+    padding: 15px;
+  }
+
+  #loan_officer .modal-header .header-title {
+    margin-bottom: 10px;
+  }
+
+}

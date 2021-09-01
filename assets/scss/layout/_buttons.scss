@@ -1,0 +1,497 @@
+$btn-md-height: 56px;
+$btn-sm-height: 36px;
+
+/* scroll to el button */
+.target-btn {
+  position: relative;
+  padding-left: calc(42px + 15px);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  color: $color-body;
+  max-width: 350px;
+  vertical-align: middle;
+  font-size: 16px;
+  line-height: 170%;
+
+
+  &:before {
+    content: '';
+    width: 42px;
+    height: 42px;
+    transition: all .3s ease;
+    left: 0;
+    top: calc(50% - (42px / 2) - 1px);
+    border: 1px solid #B9B9B9;
+    background: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='black' stroke-width='2'/%3E%3C/svg%3E%0A") $color-white no-repeat center 17px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    &:before {
+      border-color: #68AD40;
+      background: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%2373C047' stroke-width='2'/%3E%3C/svg%3E%0A") $_fill-light-green-bg no-repeat center 17px;
+    }
+  }
+
+}
+
+/* @endof - scroll to el button */
+
+
+/* slider top arrow button */
+.btn-dots-step {
+  cursor: pointer;
+  position: absolute;
+  top: -22px;
+  left: -10px;
+  font-weight: normal;
+  font-size: $smallsize;
+  line-height: 17px;
+  text-align: center;
+
+
+  &.top-arrow {
+
+    &:before {
+      content: '';
+      border: solid $color-primary;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(-135deg);
+      position: absolute;
+      top: -20px;
+      left: 12px;
+      z-index: 1;
+    }
+
+    &:after {
+      content: "";
+      width: 32px;
+      height: 32px;
+      border-radius: 32px;
+      border: 1px solid $color-body-secondary;
+      position: absolute;
+      top: -34px;
+      left: 0;
+      transition: all .22s ease;
+    }
+
+    &:hover:not(.disabled):not(:disabled) {
+      &:after {
+        cursor: pointer;
+        background-color: $color-secondary-hover;
+        border-color: $color-primary;
+      }
+    }
+
+    &:active:not(.disabled):not(:disabled),
+    &:target:not(.disabled):not(:disabled) {
+      &:after {
+        background-color: $color-primary;
+        border-color: $color-primary;
+      }
+
+      &:before {
+        border-color: $color-white;
+      }
+    }
+
+    &.disabled,
+    &:disabled {
+      &:after {
+        border-color: $color-secondary-light;
+      }
+
+      &:before {
+        border-color: $color-body-secondary;
+      }
+    }
+  }
+}
+
+/* @endof - slider top arrow button */
+
+
+/* Right arrow button */
+.btn {
+  &.btn-r-arrow {
+    appearance: none;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    transition: all .3s ease;
+    border: 1px solid $color-primary;
+    background: $color-primary;
+    border-radius: 4px;
+    color: $color-white;
+    font-weight: 500;
+    font-size: 16px;
+    height: $btn-md-height;
+    text-transform: capitalize;
+    outline: 0;
+    padding-right: $btn-md-height + 15px;
+    text-decoration: none;
+    position: relative;
+
+    &:hover:not(:active):not(.btn-disabled):not(:disabled) {
+      background-color: $color-primary-active-light;
+      border-color: $color-primary-active-light;
+      color: $color-white;
+      transform: none;
+      box-shadow: none;
+
+      &:before {
+        background-color: $color-primary;
+        border-color: $color-primary;
+      }
+    }
+
+    &:active:not(:disabled):not(.btn-disabled) {
+      color: $color-white;
+      background-color: $color-primary-active-light;
+      border-color: $color-primary-active-light;
+    }
+
+    &.btn-disabled, &:disabled {
+      color: $color-white;
+      background-color: $color-disabled;
+      border-color: $color-disabled;
+      cursor: default;
+
+      &:before {
+        background-color: $color-disabled;
+        border-color: $color-disabled;
+      }
+    }
+
+    &:after {
+      transition: none;
+      content: '';
+      position: absolute;
+      right: 24px;
+      top: calc(50% - 4px);
+      border: solid $color-white;
+      border-width: 0 2px 2px 0;
+      padding: 3.5px;
+      transform: rotate(-45deg);
+    }
+
+    &:before {
+      content: '';
+      width: $btn-md-height;
+      position: absolute;
+      top: 0;
+      right: -1px;
+      bottom: 0;
+      margin: auto;
+      transition: all .3s ease;
+      background-color: $color-primary-active-light;
+      border: 1px solid $color-primary-active-light;
+      display: block;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      height: calc(100% + 2px);
+    }
+  }
+}
+
+/* @endof - Right arrow button */
+
+
+.btn {
+  transition: all .25s ease;
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid $color-primary;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: $btnSize;
+  line-height: $btnLineHeight;
+  color: $color-white;
+  padding: 15px;
+  outline: none;
+  font-weight: 500;
+  cursor: default;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+
+  &-disable {
+    color: $color-white;
+    background-color: $color-inactive;
+    border-color: $color-inactive;
+
+    .secondary {
+      color: $color-inactive;
+      background-color: $color-white;
+      border-color: $color-inactive;
+    }
+  }
+
+  &-alt {
+    line-height: $btnAltLineHeight;
+  }
+
+  &-sm {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    height: $btn-sm-height;
+    color: $color-white;
+    padding: 9px 15px;
+  }
+
+  &-md, &:not(&-sm) {
+    height: $btn-md-height;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+
+  &-lg {
+    width: 100%;
+  }
+
+  &-block {
+    width: 100%;
+  }
+
+  &-secondary-light {
+    &.btn-md, .btn:not(.btn-sm) {
+      background-color: $color-secondary-light;
+      border-color: $color-secondary-light;
+      color: $color-secondary;
+      font-weight: 400;
+
+      &:hover {
+
+      }
+    }
+
+  }
+
+  &-invert {
+    background-color: $color-white;
+    color: $color-secondary;
+    border-color: $color-white;
+
+    &:active:not(:disabled):not(.btn-disabled) {
+      color: $color-white;
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
+
+    &:hover:not(:active):not(.btn-disabled):not(:disabled) {
+      color: $color-primary;
+      border-color: $color-white;
+      cursor: pointer;
+    }
+
+    &.btn-disabled, &:disabled {
+      color: $color-white;
+      background-color: $color-invert-disabled;
+      border-color: $color-invert-disabled;
+    }
+  }
+
+  &-primary {
+    color: $color-white;
+    background-color: $color-primary;
+    text-transform: capitalize;
+
+    &.btn-disabled, &:disabled {
+      border-color: $color-disabled;
+      background-color: $color-disabled;
+      color: $color-white;
+    }
+
+    &:hover:not(:active):not(:disabled):not(.btn-disabled) {
+      background-color: $color-primary-hover;
+      border-color: $color-primary-hover;
+      outline: none;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    &:active:not(:disabled):not(.btn-disabled) {
+      background-color: $color-primary-active;
+      border-color: $color-primary-active;
+      color: $color-white;
+      text-decoration: none;
+    }
+  }
+
+  &-secondary {
+    background-color: transparent;
+    color: $color-primary;
+
+    &.btn-disabled, &:disabled {
+      border-color: $color-disabled;
+      background-color: transparent;
+      color: $color-disabled;
+    }
+
+    &:active:not(:disabled):not(.btn-disabled) {
+      background-color: $color-primary;
+      border-color: $color-primary;
+      color: $color-white;
+    }
+
+    &:hover:not(:active):not(.btn-disabled):not(:disabled) {
+      background-color: $color-secondary-hover;
+      cursor: pointer;
+    }
+  }
+}
+
+.btnWrap {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.btnWrapAlt {
+  text-align: center;
+  margin: 45px auto;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .btn {
+    // line-height: $btnLineHeight;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &-sm {
+      // min-width: 217px;
+    }
+
+    &.btn-mob-fullwidth {
+      width: 100%;
+    }
+
+    &.btn-mob-50-width {
+      width: 50%;
+    }
+  }
+  .btnWrapAlt {
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 1200px) {
+  .btn:hover {
+    transform: translateY(0);
+  }
+
+}
+
+.btnIcon {
+  transition: all .3s ease;
+  color: $color-white;
+  outline: none;
+  background: none;
+  position: relative;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  font-size: 14px;
+
+  &:hover {
+    .btnIcon__icon {
+      background-color: $color-primary;
+    }
+  }
+
+  &-green {
+    color: $color-primary;
+
+    &:hover {
+      text-decoration: none;
+
+      .btnIcon__icon {
+        background-color: $color-secondary-hover;
+        border: 1px solid $color-primary;
+
+      }
+    }
+
+    &:active,
+    &:focus {
+      .btnIcon__icon {
+        background-color: $color-primary;
+      }
+
+      svg {
+        color: $color-white;
+      }
+    }
+
+    svg {
+      color: $color-primary;
+    }
+  }
+
+  &-sm {
+    .btnIcon__icon {
+      width: 26px;
+      height: 26px;
+
+      svg {
+        width: auto;
+      }
+    }
+  }
+
+  &-alt {
+    .btnIcon__icon {
+      border-color: transparent;
+      background-color: rgba($color-white-alt, .15);
+
+      svg {
+        margin: 0 2px 0 0;
+      }
+    }
+  }
+
+  &-arrowLeft {
+    .btnIcon__icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__icon {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid $color-body-secondary;
+    transition: all .3s ease;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      display: block;
+      width: 10px;
+      height: auto;
+      margin-left: 2px;
+    }
+  }
+}

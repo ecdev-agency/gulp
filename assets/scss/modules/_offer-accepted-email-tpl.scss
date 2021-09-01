@@ -1,0 +1,124 @@
+.email-content {
+  font-size: 16px;
+
+  h1,h2,h3,h4,h5,h6 {
+    font-family: Arial;
+    color: $color-body;
+  }
+
+  .additional-content {
+    font-family: Arial;
+
+  }
+
+  a {
+    &:link, &:visited {
+      color: $color-primary;
+    }
+  }
+
+  table.email-lead {
+    margin-bottom: 40px;
+    color: $color-body;
+    border-collapse: collapse;
+    font-family: Arial;
+    max-width: 100%;
+    border: 0;
+    font-size: 16px;
+    width: 400px;
+
+    th, td {
+      border-collapse: collapse;
+      border: 0;
+      font-weight: normal;
+      color: $color-body;
+    }
+  }
+
+
+  table.email-app-form {
+    border-collapse: collapse;
+    font-family: Arial;
+    max-width: 100%;
+    border: 0;
+    font-size: 16px;
+    color: $color-body;
+
+    th, td {
+      border-collapse: collapse;
+      border: 0;
+      font-weight: normal;
+    }
+
+    thead {
+      font-size: 14px;
+      line-height: 24px;
+      border-bottom: 1px solid #e7eaf3;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      th {
+        min-width: 135px;
+      }
+    }
+
+    .circle-checkbox-static {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border: 2px solid #b7b7b7;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid #e7eaf3;
+        padding: 15px 0 15px 20px;
+
+        &.no-border {
+          &:not(.last-item) {
+            border: 0;
+          }
+        }
+
+        td {
+          padding: 20px;
+          vertical-align: middle;
+
+          &.values-td {
+            font-size: 16px;
+            text-align: center;
+            color: #999;
+
+            .yes {
+              color: $color-body;
+              font-weight: bold;
+            }
+          }
+        }
+
+        .question-title {
+          margin-bottom: 0;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 32px;
+        }
+
+        .question-sub-title {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 26px;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

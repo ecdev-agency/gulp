@@ -1,0 +1,52 @@
+/*
+* Contact fields form styling
+ */
+
+#your-offer-accepted-page {
+
+
+  .app-section {
+    .question-item-container {
+
+      &.submit-form {
+
+        &.last-item {
+          border-bottom: 1px solid #E7EAF3;
+        }
+
+        .options-container {
+          padding-left: calc(40px + 33px);
+          flex-direction: column;
+        }
+      }
+
+    }
+
+
+    .form-err-msg {
+      padding: 10px 0;
+      width: 100%;
+      border-radius: 4px;
+      margin-bottom: 0;
+      color: $color-validate-field;
+      margin-top: 30px;
+      text-align: right;
+    }
+  }
+}
+
+.submit-form-action {
+  text-align: right;
+  padding-left: calc(50% + 40px + ((50%/3)/2) - 30px);
+  padding-top: 40px;
+
+.btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: $breakpoint-medium) and (orientation: portrait) {
+  .submit-form-action {
+    padding-left: 0;
+  }
+}

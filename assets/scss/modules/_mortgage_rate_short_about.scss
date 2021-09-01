@@ -1,0 +1,23 @@
+#about_short_section {
+
+  a {
+    color: $color-primary;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+  }
+
+}
+
+
+
+@media screen and (max-width: $breakpoint-medium) {
+
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  #about_short_section {
+    h2 {
+      margin-bottom: 8px;
+    }
+  }
+}

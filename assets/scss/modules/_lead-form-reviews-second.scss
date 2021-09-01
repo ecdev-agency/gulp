@@ -1,0 +1,172 @@
+.reviewsWrap {
+  max-width: 440px;
+  margin: 50px auto 45px auto;
+}
+
+.reviews {
+  &__ratingInfo {
+    margin-bottom: 10px;
+  }
+
+  &__ratingText {
+    display: inline-block;
+    margin-left: 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &__rating {
+    margin-right: 5px;
+  }
+
+  &__content {
+    border-radius: 4px;
+    background-color: $color-secondary-light-plus;
+    border: 1px solid $color-secondary-light;
+    box-sizing: border-box;
+  }
+
+  &__text {
+    padding: 20px 25px;
+    font-weight: normal;
+    position: relative;
+
+
+    &:before {
+      content: url("../../assets/img/quotes.svg");
+      position: absolute;
+      top: 17px;
+      left: 8px;
+      z-index: 1;
+    }
+
+    * {
+      z-index: 2;
+      position: relative;
+      font-size: 16px;
+      line-height: 170%;
+      color: #5d5d5d;
+    }
+  }
+
+  &__author {
+    border-top: 1px solid $color-secondary-light;
+    padding: 15px 25px;
+    display: flex;
+  }
+
+  &__date {
+    color: $color-body-secondary;
+    margin-top: 9px;
+    display: block;
+    font-size: 14px;
+  }
+
+
+  &__stars {
+    margin-left: auto;
+    line-height: 0;
+
+    path {
+      fill: $color-rating-stars;
+    }
+
+    svg {
+      margin-right: 4px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+
+  &__authorDetails {
+    display: flex;
+    align-items: flex-end;
+    width: calc(100% - 54px);
+  }
+
+
+  &__authorName {
+    font-size: 16px;
+    line-height: 1;
+  }
+
+
+  &__authorLogo {
+    display: inline-block;
+    background-color: #03823F;
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 40px;
+    text-align: center;
+    color: $color-white;
+    margin-right: 17px;
+  }
+}
+
+.slick {
+  &-slider {
+    opacity: 0;
+
+    &.slick-initialized {
+      opacity: 1;
+    }
+  }
+
+  &-arrow {
+    cursor: pointer;
+    position: absolute;
+    top: calc(50% - (32px / 2));
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid $color-secondary-light;
+    background-color: $color-white;
+
+    &:before {
+      content: '';
+      background-image: url("data:image/svg+xml,%3Csvg width='8' height='12' viewBox='0 0 8 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L1 11' stroke='%237991B6' stroke-width='1.5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 7px;
+      height: 14px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: -2px;
+      margin: auto;
+    }
+
+    &:hover {
+     &:before {
+       background-image: url("data:image/svg+xml,%3Csvg width='8' height='12' viewBox='0 0 8 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L1 11' stroke='%23009821' stroke-width='1.5'/%3E%3C/svg%3E");
+     }
+    }
+  }
+
+  &-prev {
+    left: -70px;
+    &:before {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &-next {
+    right: -70px;
+
+    &:before {
+      left: 0;
+      right: -2px;
+    }
+  }
+}

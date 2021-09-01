@@ -1,0 +1,168 @@
+/**
+ * Breakpoints
+ */
+$breakpoint-desktop-lg:  1440px;
+$breakpoint-desktop:     1366px;
+$breakpoint-desktop-sm:  1300px;
+$breakpoint-large-lg:    1200px;
+$breakpoint-large:       1120px;
+$breakpoint-medium:      991px;
+$breakpoint-mobile-iphone:      820px;
+$breakpoint-mobile:      767px;
+$breakpoint-phone:       576px;
+$breakpoint-phone-small: 375px;
+// landscape
+$breakpoint-mobile-landscape: 820px;
+
+
+
+// So media queries don't overlap when required, provide a maximum
+$breakpoint-large-min:       ($breakpoint-large + 1);
+$breakpoint-medium-min:      ($breakpoint-medium + 1);
+$breakpoint-desktop-lg-min:  ($breakpoint-desktop-lg + 1);
+$breakpoint-phone-min:       ($breakpoint-phone + 1);
+
+
+
+/**
+ * Colors
+ */
+
+// $color-secondary: #000000;
+$color-gray: #CCCCCC;
+$color-gray-light: #EFEFEF;
+$color-dark-gray: #1E1E1E;
+$color-text: #828282;
+$color-inactive: #c4c4c4;
+$color-title: #3d3d3d;
+
+
+// new
+$color-secondary-light: #E7EAF3;
+$color-secondary-light-plus: #F7F7FB;
+$color-secondary-bright: #A8CAFF;
+$color-body: #3D3D3D;
+$color-body-muted: #5D5D5D;
+$color-body-secondary: #7991B6;
+$color-body-secondary-light: #CFD4E8;
+$color-primary: #009821;
+$color-primary-hover: #00B628;
+$color-primary-active: #00771B;
+$color-primary-active-light: #007E1C;
+$color-disabled: #BDCBC0;
+$color-secondary: #2C3972;
+$color-secondary-dark: #1A234B;
+$color-secondary-hover: #F2FAF4;
+$color-white: #fff;
+$color-white-alt: #fbfbfb;
+$color-form-validation: #F44336;
+$color-invert-disabled: #485386;
+$color-rating-stars: #FFB45C;
+
+
+/**
+* Specific parsed color names for SVG/data base64 images path
+ */
+$_color-primary: str-slice(#{$color-primary}, 2);
+$_color-body: str-slice(#{$color-body}, 2);
+$_color-disabled: str-slice(#{$color-disabled}, 2);
+$_color-body-secondary: str-slice(#{$color-body-secondary}, 2);
+$_color-secondary: str-slice(#{$color-secondary}, 2);
+$_color-rating-stars: str-slice(#{$color-rating-stars}, 2);
+
+/**
+* Sliders buttons
+ */
+$slider-btn-border-color: #C8C8C8;
+
+
+
+/**
+* Forms (globally) variables
+ */
+$tabulation-form-default-color: #FFF;
+$tabulation-form-focused-color: $color-primary;
+
+/**
+ * Additional variables
+ */
+
+$h1size          : 46px;
+$h1lineHeight    : 58px;
+
+$h2size          : 30px;
+$h2lineHeight    : 38px;
+
+$h2childSize     : 20px;
+$h2childLineHeight : 23.7px;
+
+$h3size          : 24px;
+$h3lineHeight    : 34px;
+
+$h4size          : 20px;
+$h4lineHeight    : 28px;
+
+$textSize        : 16px;
+$textLineHeight  : 27px;
+
+$titlesize       : 20px;
+$titlelineheight : 1.2;
+
+$smallsize       : 14px;
+$smallineheight  : 20px;
+
+
+$btnSize         : 16px;
+$btnLineHeight   : 19px;
+
+$btnAltLineHeight: 42px;
+$inputSize       : 146x;
+$inputErrorSize  : 12px;
+
+
+/**
+* global
+ */
+$_fill-light-green-bg: #F1F9ED;
+
+/**
+* Subscribe form
+ */
+$fill-light-green-bg: #F1F9ED;
+$color-validate-field: #EF5353;
+
+/**
+ * Lead page
+ */
+$form-error-color:#EF5353;
+$btn-hover-bg: #F1F9ED;
+$btn-dark-bg: #68AD40;
+$btn-icon-bg:#68AD40;
+/**
+ * Mixins
+ */
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        font-size: 16px;
+        line-height: 140%;
+        color: #C4C4C4;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+        font-size: 16px;
+        line-height: 140%;
+        color: #C4C4C4;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+        font-size: 16px;
+        line-height: 140%;
+        color: #C4C4C4;
+    }
+
+    &:-ms-input-placeholder {
+        font-size: 16px;
+        line-height: 140%;
+        color: #C4C4C4;
+    }
+}

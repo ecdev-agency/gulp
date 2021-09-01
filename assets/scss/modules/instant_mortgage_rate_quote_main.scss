@@ -1,0 +1,125 @@
+#instant-mortgage-rate-quote-page {
+  padding-top: 0;
+  margin-bottom: 0;
+  font-weight: 400;
+  line-height: 28.8px;
+
+  p {
+    font-weight: 400;
+    line-height: 28.8px;
+  }
+
+  #content_section {
+
+    p {
+      margin-bottom: 0px;
+    }
+  }
+
+}
+
+
+.full-section {
+  position: relative;
+  background-color: $color-white;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .section-title {
+    margin-bottom: 8px;
+  }
+
+  h1, h2 {
+    margin-bottom: 8px;
+    font-size: $h2size;
+    line-height: 1.33;
+    color: $color-body;
+  }
+}
+
+.section {
+  .section-title {
+    margin-bottom: 53px;
+  }
+}
+
+
+@media screen and (max-width: $breakpoint-medium) {
+
+}
+
+
+@media screen and (max-width: $breakpoint-mobile) {
+  #instant-mortgage-rate-quote-page {
+    overflow-x: hidden;
+  }
+
+  .section {
+    .section-title {
+      margin-bottom: 40px;
+    }
+  }
+
+  .full-section {
+    padding: 40px 0;
+
+    .section-title, h2 {
+      margin-bottom: 8px;
+      font-size: $h2size;
+    }
+  }
+
+  .content {
+    h2 {
+      font-size: 20px;
+      line-height: 140%;
+    }
+  }
+
+  #content_section {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    p {
+      &:not(.apply-action-container) {
+        margin-bottom: 24px;
+      }
+
+    }
+
+    .apply-action-container {
+      margin-bottom: 0;
+
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+
+  .section {
+
+    .section-title {
+      margin-bottom: 45px;
+    }
+  }
+
+}
+
+
+@media screen and (max-width: $breakpoint-phone) {
+
+}
+
+
+@media only screen and (min-device-width: $breakpoint-phone-small) and (max-device-width: $breakpoint-mobile-landscape) and (orientation: landscape) {
+
+}

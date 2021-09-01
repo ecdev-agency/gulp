@@ -1,0 +1,1845 @@
+$mob-inner-form-offset: -10px;
+
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+
+#rqt-not-defined {
+  font-size: 22px;
+  margin-top: 70px;
+  text-align: center;
+  color: $color-body-secondary;
+}
+
+
+/* toggle tab radio */
+.toggle-tab-radio {
+  box-sizing: border-box;
+  overflow: hidden;
+  display: inline-flex;
+  position: relative;
+
+  &.three {
+    min-width: 264px;
+  }
+
+  > input {
+    &:checked {
+      & + label {
+        color: $color-primary;
+        border-bottom: 2px solid;
+        transition: background 300ms linear;
+      }
+    }
+
+    & + label {
+      display: block;
+      padding: 15px 20px;
+      cursor: pointer;
+      color: $color-body-secondary;
+      text-align: center;
+      margin-bottom: 0;
+      line-height: 1.3;
+    }
+  }
+
+  > input[type='radio'] {
+    display: none;
+  }
+
+  > input[disabled] + label {
+    opacity: 0.50;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+}
+
+/* @endof - toggle radio */
+
+
+/* city modal popover */
+.modal-popover {
+  min-width: 290px;
+  height: auto;
+  background: $color-white;
+  z-index: 2;
+  position: absolute;
+  border-radius: 4px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+  display: none;
+  max-width: 290px;
+  width: 100%;
+  min-height: 281px;
+  top: 15px;
+  overflow: hidden;
+  margin-left: 32px;
+
+  .filter-input {
+    border: 0;
+    border-bottom: 1px solid $color-secondary-light;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8.5' cy='8.5' r='7.5' stroke='%237991B6' stroke-width='2'/%3E%3Cpath d='M14 14L19 19' stroke='%237991B6' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left 15px center;
+    padding: 13px 15px 13px 50px;
+    outline: none;
+    width: 100%;
+    border-radius: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 170%;
+
+    &::placeholder {
+      color: $color-body-secondary;
+      opacity: 1;
+    }
+  }
+
+  .data-list {
+    list-style: none;
+    padding: 5px 0;
+    height: 241px;
+    font-weight: 400;
+    overflow: hidden;
+    display: block;
+    margin-bottom: 0;
+
+    li {
+      display: block;
+      line-height: 19px;
+
+      a {
+        display: block;
+        padding: 11px 15px;
+        color: $color-body;
+        text-decoration: none;
+
+        &:hover {
+          background-color: $color-secondary-light-plus;
+        }
+      }
+    }
+  }
+
+  .advanced-title {
+    margin-left: 4px;
+    color: $color-body-secondary;
+    white-space: pre;
+  }
+}
+
+/* @endof - city popover */
+
+
+.fld-input {
+  display: flex;
+}
+
+.content-container {
+  background-color: $color-secondary-light-plus;
+}
+
+#chkbox-options {
+  padding: 27px 0 6px 0;
+  max-width: 870px;
+  margin: 0 auto;
+  width: 100%;
+
+  > .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .extra-options {
+    &:not(.hidden) {
+      margin-left: 50px;
+    }
+
+    .custom-checkbox {
+      font-size: 14px;
+      height: 20px;
+
+      > span {
+        height: 18px;
+      }
+    }
+  }
+
+  .rates-content-container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    padding-left: 0;
+    padding-right: 0;
+
+
+    .chkbox-options-container {
+      display: flex;
+    }
+
+    .title-container {
+      margin-right: auto;
+
+      .title {
+        margin-bottom: 0;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 28px;
+      }
+    }
+
+
+  }
+
+}
+
+section {
+  padding-bottom: 123px;
+}
+
+
+#calc-content {
+
+  &.preload-values {
+    .select2-selection__rendered,
+    .fld-input,
+    input[type="text"],
+    input[type="color"],
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="email"],
+    input[type="file"],
+    input[type="month"],
+    input[type="number"],
+    input[type="reset"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="url"],
+    input[type="password"],
+    select {
+      position: relative;
+      color: transparent !important;
+    }
+
+    .rates-details {
+      &:not(:first-child) .rate:not(:last-child):before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: calc(100% - 30px);
+        height: 60%;
+        background: linear-gradient(-45deg, #535f98, #4a5790, #5e6e9a, #51659e);
+        background-size: 400% 400%;
+        animation: gradientLoader 1.2s ease-in-out infinite;
+        margin-top: 5px;
+        border-radius: 2px;
+        transition: all .4s ease-in-out;
+      }
+    }
+
+    #cityState, .rqt-preload {
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: linear-gradient(-45deg, #535f98, #4a5790, #5e6e9a, #51659e);
+        background-size: 400% 400%;
+        animation: gradientLoader 1.2s ease infinite;
+        border-radius: 2px;
+        transition: all .4s ease-in-out;
+        z-index: 3;
+        left: 0;
+        height: 19px;
+      }
+    }
+
+    #cityState {
+      &:before {
+        width: calc(100% + 22px);
+        height: 100%;
+        top: 0;
+      }
+    }
+
+    #loan_purpose_tabs {
+      &:before {
+        border-color: transparent;
+      }
+
+      label {
+        border-color: transparent;
+
+        &:before {
+          width: calc(100% - 10px);
+          top: 15px;
+          height: 30px;
+        }
+      }
+    }
+
+    .add-options-field {
+      &:before {
+        margin-left: -2;
+        height: 70%;
+        top: calc(50% - 25px);
+      }
+    }
+
+    .rqt-preload {
+      input {
+        border-color: transparent !important;
+      }
+
+      &:before {
+        width: 100%;
+        top: 5px;
+      }
+    }
+  }
+}
+
+
+/* Rates & rates wrapper */
+.rqt-rates-container {
+  .cta-buttons-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    max-width: 870px;
+    margin: 30px auto 0 auto;
+
+    .btn {
+      margin-left: 30px;
+      max-width: 248px;
+      width: 100%;
+    }
+  }
+
+  .rates-wrapper {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    max-width: 870px;
+    margin: 0 auto;
+
+    &.no-third-tarty-fees {
+      .rate-item {
+        .rate-item-col {
+          .rate-col-row {
+            &:last-of-type {
+              .rate-col {
+                flex-basis: 50%;
+              }
+            }
+
+            &:first-of-type {
+              width: 60%;
+
+              .rate-col {
+                &:first-child {
+                  flex-basis: 55%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .more-rates-container {
+      text-align: right;
+
+      .more-rates-btn-arrow {
+        font-size: 14px;
+        line-height: 20px;
+        color: $color-secondary;
+        text-decoration: none;
+        position: relative;
+        padding-left: 18px;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 4px;
+          left: 0;
+          width: 12px;
+          height: 8px;
+          background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%232C3972' stroke-width='1.5'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: left center;
+          background-size: 100%;
+        }
+
+
+        &.open {
+          &:before {
+            transform: rotate(-180deg);
+          }
+        }
+      }
+    }
+
+    .calc-error {
+      text-align: center;
+
+      .title {
+        text-align: center;
+        padding: 35px 0;
+        font-size: 18px;
+        color: $color-body-secondary;
+      }
+    }
+
+    &.loading {
+      &:after {
+        content: '';
+        background: $color-secondary-light-plus;
+        width: 100%;
+        height: calc(100% + 40px);
+        position: absolute;
+        z-index: 0;
+        top: -40px;
+        opacity: .75;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 56px;
+        height: 56px;
+        z-index: 1;
+        background: url(../../assets/img/rqt/loading2.svg) no-repeat center center;
+        left: calc(50% - 32px);
+        top: 60px;
+        background-size: 148px;
+      }
+
+      #all-rates {
+        filter: blur(0.5px);
+      }
+    }
+
+    .rate-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 66px;
+      margin-bottom: 5px;
+      padding: 12px 30px;
+      background: $color-white;
+      border: 1px solid $color-secondary-light;
+      box-sizing: border-box;
+      border-radius: 4px;
+
+      &.hidden {
+        display: none;
+      }
+
+      .rate-item-col {
+        flex-basis: 79%;
+        display: flex;
+        flex-direction: row;
+
+        .rate-col-row {
+
+          &:first-of-type {
+            width: 51%;
+            display: flex;
+
+            .rate-col {
+              flex-basis: calc(33% - 15px);
+
+              &:first-child {
+                flex-basis: 60%;
+                padding-top: 15px;
+              }
+            }
+          }
+
+          &:last-of-type {
+            width: 55%;
+            display: flex;
+
+            .rate-col {
+              flex-basis: 33%;
+            }
+          }
+
+          .rate-col {
+            flex-basis: 15%;
+          }
+        }
+      }
+
+      .rate-col {
+
+        &.actions {
+          display: flex;
+
+          .btn {
+            margin-right: 10px;
+            min-width: 95px;
+
+            &.btn-apply {
+              margin-right: 0;
+            }
+          }
+        }
+
+        &.payment-col {
+          .rate-value {
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 27px;
+            margin: 0;
+            vertical-align: baseline;
+          }
+
+          sup, sub {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 170%;
+            color: $color-body-secondary;
+          }
+
+          sup {
+            vertical-align: super;
+          }
+
+          sub {
+            vertical-align: text-bottom;
+            margin-right: -2px;
+            line-height: 200%;
+          }
+        }
+
+        .rate-value {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 140%;
+          color: $color-body;
+
+          b {
+            font-weight: 500;
+          }
+        }
+
+        label {
+          font-style: normal;
+          font-weight: 500;
+          display: block;
+          font-size: 12px;
+          line-height: 100%;
+          margin-top: 10px;
+          color: $color-body-secondary;
+        }
+      }
+    }
+  }
+}
+
+/* @endof - Rates & rates wrapper */
+
+
+#parameters {
+  padding: 20px 30px 30px;
+  margin: 25px auto 0 auto;
+  width: 100%;
+  background-color: $color-secondary;
+  color: $color-white;
+  border-radius: 20px;
+  z-index: 1;
+
+  #loan_purpose_tabs {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      border-bottom: 1px solid $color-secondary-light;
+      width: 100%;
+    }
+
+    label {
+      transition: none;
+    }
+  }
+
+  .form-fields-container {
+
+    &[show-add-options="true"] {
+      .field {
+        &.action-fields {
+          order: 3;
+        }
+      }
+    }
+
+    .add-options-col {
+      display: none;
+
+      &.show {
+        display: block;
+      }
+    }
+
+    .fields-group {
+      .field-group {
+        &:first-child {
+          width: 65%;
+        }
+
+        &:last-child {
+          width: 35%;
+        }
+      }
+    }
+
+    .field {
+      flex-basis: calc(25% - 10px);
+      height: 56px;
+      margin-top: 10px;
+      margin-right: 5px;
+      margin-left: 5px;
+
+      &.add-options-field {
+        margin-top: 0;
+        height: calc(22px + (18px * 2) - 10px);
+        margin-right: 10px;
+      }
+
+      select {
+        width: 100%;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23#{$_color-body}' stroke-width='1.5'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+      }
+    }
+
+    .btn-get-rates {
+      display: block;
+      width: 100%;
+    }
+
+    .additional-options-container {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+
+      .add-options-field {
+        margin-left: auto;
+
+        .btn {
+          &.add-options-btn {
+            background-color: $color-white;
+            width: 100%;
+            cursor: pointer;
+            border: 0;
+            position: relative;
+            text-align: left;
+            height: 40px;
+            padding-left: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-right: 0;
+
+            &:before {
+              content: "+";
+              position: relative;
+              top: 0;
+              left: 0;
+              width: 22px;
+              height: 22px;
+              border: 1px solid $color-secondary;
+              border-radius: 22px;
+              display: inline-block;
+              vertical-align: middle;
+              margin-right: 10px;
+              font-size: 19px;
+              text-align: center;
+              line-height: 20px;
+              margin-top: -4px;
+            }
+
+            &[data-show="true"] {
+              &:before {
+                content: "–";
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+    .action-fields {
+      .field {
+        flex-basis: calc(25% - 10px);
+        height: 56px;
+
+        &.submit-action {
+          margin-top: 20px;
+        }
+      }
+    }
+
+    #fields {
+      margin-top: calc(30px - 10px);
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      .additional-options {
+        position: relative;
+
+        &:before {
+          content: "";
+          position: relative;
+          padding: 4.5px;
+          font-size: 22px;
+          font-weight: 450;
+          text-align: center;
+          display: inline-block;
+          width: 22px;
+          height: 22px;
+        }
+
+        &[data-show="true"] {
+          &:before {
+            content: '–';
+            line-height: calc(21px / 2);
+          }
+        }
+
+        &[data-show="false"] {
+          &:before {
+            content: '+';
+            padding-top: 5px;
+            line-height: calc(21px / 2);
+          }
+        }
+
+        &:hover {
+          transition: ease-out .5s;
+        }
+      }
+    }
+  }
+
+
+  .hdr-option {
+    display: inline-block;
+
+    a {
+      display: none;
+      text-decoration: none;
+      position: relative;
+      width: 20px;
+      height: 24px;
+      transform: rotate(-180deg);
+      transition: none;
+
+      &:before {
+        content: '';
+        width: 18px;
+        height: 13px;
+        position: absolute;
+        display: block;
+        background-size: 100%;
+        top: 10px;
+        left: 1px;
+      }
+    }
+  }
+
+  &.not-open {
+    .hdr-option {
+      a {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  &:not(.not-open) {
+    .hdr-option {
+      a {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+
+  .fld-input input[type=email],
+  .fld-input input[type=number],
+  .fld-input input[type=tel],
+  .fld-input input[type=text] {
+    box-shadow: none;
+  }
+
+
+  #loan_purpose {
+    display: none;
+  }
+
+  .header-row {
+    display: flex;
+    align-items: center;
+
+    > div {
+      margin-right: calc(42px - 5px);
+      display: flex;
+      align-items: center;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &:not(.not-open) {
+    .form-fields-container {
+      display: block;
+      background-color: $color-white;
+      border-radius: 16px;
+      padding: 5px 30px 0 30px;
+      position: relative;
+      margin-left: -25px;
+      margin-right: -25px;
+      margin-bottom: -25px;
+    }
+  }
+
+  &.not-open {
+    .form-fields-container {
+      display: none;
+    }
+
+    #loan_purpose_tabs {
+      display: none;
+    }
+  }
+
+  .front-message {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 12px 12px 12px 18px;
+    max-width: 310px;
+    width: 100%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 170%;
+    color: $color-body-secondary-light;
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style: none;
+        display: block;
+        color: $color-body-secondary-light;
+        padding-left: calc(10px + 7.5px);
+        background-image: url("data:image/svg+xml,%3Csvg width='11' height='8' viewBox='0 0 11 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.5L4 6.5L9.5 1' stroke='%23CFD4E8' stroke-width='2'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: left center;
+      }
+    }
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .par-header {
+    align-items: flex-start;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    .zip-input-container {
+      margin-left: 12px;
+      position: relative;
+
+      input {
+        &#zip_code {
+          background: transparent;
+          border-radius: 0;
+          border: 0;
+          box-shadow: 0 0 0 2px transparent;
+          padding: 8px;
+          height: 30px;
+          line-height: 30px;
+          max-width: 86px;
+          color: $color-white;
+          border-bottom: 1px solid $color-white;
+          background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.3639 1.45388L15.0901 2.18009C15.6953 2.78526 15.6953 3.6325 15.0901 4.23768L5.28635 14.0415L1.77634 15.3729C1.53427 15.4939 1.2922 15.3729 1.17117 15.2518C1.05013 15.1308 0.9291 14.8887 1.05013 14.6467L2.50255 11.2577L12.3064 1.45388C12.7905 0.848707 13.7588 0.848707 14.3639 1.45388Z' stroke='white' stroke-width='1.5' stroke-miterlimit='10'/%3E%3Cpath d='M10.4023 3.56836L12.9699 6.13589' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E%0A");
+          background-repeat: no-repeat;
+          background-position: right 5px center;
+          background-size: 15px;
+        }
+      }
+    }
+
+
+    label {
+      color: $color-secondary-bright;
+      font-size: 14px;
+      display: flex;
+
+      &[for="zip_code"] {
+        div.error {
+          margin-top: 42px;
+        }
+      }
+    }
+
+    .hdr-name {
+      color: $color-white;
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .city-zip-header {
+      position: relative;
+
+      a[data-toggle="modal-popover"] {
+        color: $color-white;
+        border-radius: 4px;
+        padding-right: 25px;
+        padding-left: 5px;
+      }
+
+      a {
+        color: $color-body;
+        text-decoration: none;
+
+        &[data-toggle="modal-popover"] {
+          #cityState {
+            &:after {
+              background-repeat: no-repeat;
+            }
+          }
+
+          &:not(.open) {
+            #cityState {
+              &:after {
+                position: absolute;
+                content: '';
+                width: 10px;
+                height: 10px;
+                top: 7px;
+                right: calc(-9px + -10px);
+                background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 0.999999' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E%0A");
+                z-index: 2;
+              }
+            }
+          }
+
+          &.open {
+            #cityState {
+              &:after {
+                top: 4px;
+                position: absolute;
+                content: '';
+                width: 10px;
+                height: 10px;
+                right: calc(-9px + -10px);
+                transform: rotate(180deg);
+                background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 0.999999' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E%0A");
+              }
+            }
+          }
+
+        }
+      }
+
+      .loc-icon {
+        width: 16px;
+        height: 20px;
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5227 12.7719L7.90318 19.2344L2.38002 12.7751L2.36734 12.7602L2.35355 12.7464L2.26735 12.6602C1.14972 11.3497 0.5 9.66991 0.5 7.9C0.5 3.77614 3.77614 0.5 7.9 0.5C12.0239 0.5 15.3 3.77614 15.3 7.9C15.3 9.66748 14.6518 11.3511 13.625 12.6679L13.5464 12.7464L13.5341 12.7588L13.5227 12.7719ZM12 7.9C12 5.62386 10.1761 3.8 7.9 3.8C5.62386 3.8 3.8 5.62386 3.8 7.9C3.8 10.1761 5.62386 12 7.9 12C10.1761 12 12 10.1761 12 7.9Z' fill='white' stroke='white'/%3E%3C/svg%3E%0A");
+        margin-right: 3px;
+        display: inline-block;
+        background-size: contain;
+        vertical-align: sub;
+      }
+
+      #cityState {
+        position: relative;
+      }
+    }
+  }
+
+}
+
+
+@media screen and (min-width: $breakpoint-large-lg) {
+  #apply_section picture {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-medium) {
+
+  #chkbox-options {
+    .rates-content-container {
+      align-items: center;
+    }
+  }
+
+
+  #calc-content {
+    &.preload-values {
+      .add-options-field {
+        &:before {
+          margin-left: 0;
+          height: 70%;
+          top: calc(50% - 25px);
+          width: calc(100% - 5px);
+        }
+      }
+    }
+  }
+
+}
+
+
+@media screen and (max-width: $breakpoint-large-lg) {
+  #chkbox-options {
+    .extra-options {
+      &:not(.hidden) {
+        margin-left: 40px;
+      }
+    }
+  }
+
+  #parameters {
+    .form-fields-container {
+      .fields-group {
+        .field-group {
+          &:last-child {
+            width: 45%;
+          }
+        }
+      }
+    }
+  }
+
+  .rqt-rates-container {
+    .rates-wrapper {
+      .rate-item {
+        padding: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-medium) {
+  #mortgage-calc {
+    padding-bottom: 30px;
+  }
+
+
+  #main {
+    .content-container {
+      .col {
+        &:not(:last-child) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .rqt-rates-container {
+    .rates-wrapper,
+    .cta-buttons-wrapper {
+      padding-left: 15px;
+      padding-right: 15px;
+
+      .btn {
+        margin-left: 10px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .rates-wrapper {
+      &.loading {
+        &:after {
+          width: calc(100% - 30px);
+        }
+      }
+
+      &.no-third-tarty-fees {
+        .rate-item {
+          .rate-item-col {
+            .rate-col-row {
+              &:first-of-type {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      .rate-item {
+        max-height: 160px;
+        height: 100%;
+
+        .rate-item-col {
+          flex-basis: 70%;
+          display: flex;
+          flex-direction: column;
+
+          .rate-col-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            align-items: flex-end;
+
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+
+            &:first-of-type {
+              width: 100%;
+
+              .rate-col {
+                flex-basis: 50%;
+                position: relative;
+
+                &.payment-col {
+                  .rate-value {
+                    font-size: 30px;
+                    line-height: 38px;
+                  }
+                }
+
+                .rate-value {
+                  font-size: 16px;
+                  line-height: 140%;
+                }
+
+                &:last-of-type {
+                  padding-left: 7.1vw;
+
+                  &:before {
+                    content: '';
+                    position: absolute;
+                    top: calc(50% - (42px / 2));
+                    left: 0;
+                    width: 1px;
+                    height: 42px;
+                    background-color: $color-secondary-light;
+                  }
+                }
+              }
+            }
+
+            &:last-of-type {
+              width: 100%;
+
+              .rate-col {
+                flex-basis: 33%;
+
+                &:nth-child(2) {
+                  padding-left: 15px;
+                }
+              }
+            }
+          }
+
+          .rate-col {
+
+            &.actions {
+              .btn {
+                margin-right: 0;
+                max-width: 190px;
+                width: 100%;
+                margin-bottom: 20px;
+
+                &:last-child {
+                  margin-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+
+        .rate-col {
+          &.actions {
+            flex-basis: 30%;
+            display: flex;
+            flex-direction: column;
+
+            .btn {
+              max-width: 190px;
+              margin-right: 0;
+              width: 100%;
+              margin-left: 0;
+              order: 2;
+              margin-bottom: 0;
+
+              &.btn-apply {
+                order: 1;
+                margin-bottom: 20px;
+              }
+
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+  #chkbox-options {
+    max-width: 100%;
+    padding-bottom: 20px;
+
+    .rates-content-container {
+      padding-left: 30px;
+      padding-right: 30px;
+      flex-direction: column;
+    }
+
+    .chkbox-options-container {
+      display: flex;
+      margin-top: 15px;
+    }
+
+    .extra-options {
+      &:not(.hidden) {
+        margin-left: 40px;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+
+  #parameters {
+    padding: 30px 15px 15px;
+
+    .par-header {
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+
+    .front-message {
+      background: rgba(174, 170, 250, .06);
+      margin-top: 20px;
+      max-width: 414px;
+      width: 100%;
+      padding-top: 8px;
+      padding-bottom: 8px;
+
+      ul {
+        li {
+          display: inline-block;
+          margin-right: 20px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    &:not(.not-open) {
+      .form-fields-container {
+        padding: 10px;
+        margin-left: -10px;
+        margin-right: -10px;
+        margin-bottom: -10px;
+      }
+    }
+
+    .form-fields-container {
+      .field {
+        flex-basis: calc(33% - 5px);
+      }
+
+      > .row {
+        margin: 0;
+      }
+
+      .additional-options-container {
+        .add-options-field {
+          margin: 5px auto 0 auto;
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (min-device-width: $breakpoint-phone-small) and (max-device-width: $breakpoint-mobile-iphone) and (orientation: landscape) {
+  #parametersForm {
+    > .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  #mortgage-calc {
+    padding-bottom: 30px;
+  }
+
+  #main {
+    .content-container {
+      .col {
+        &:not(:last-child) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .rqt-rates-container {
+    .rates-wrapper,
+    .cta-buttons-wrapper {
+      padding-left: 0;
+      padding-right: 0;
+
+      .btn {
+        margin-left: 10px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .rates-wrapper {
+
+      &.no-third-tarty-fees {
+        .rate-item {
+          .rate-item-col {
+            .rate-col-row {
+              justify-content: end;
+
+              &:first-of-type {
+                .rate-col:first-child {
+                  flex-basis: 50%;
+                }
+              }
+
+              &:last-of-type {
+                .rate-col:nth-child(2) {
+                  padding-left: 7.1vw;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.loading {
+        &:after {
+          width: 100%;
+        }
+
+        &:before {
+          top: calc(120px - (56px / 2));
+        }
+      }
+
+      .rate-item {
+        max-height: 160px;
+        height: 100%;
+
+        .rate-item-col {
+          flex-basis: 70%;
+          display: flex;
+          flex-direction: column;
+
+          .rate-col-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            align-items: flex-end;
+
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+
+            &:first-of-type {
+              width: 100%;
+
+              .rate-col {
+                flex-basis: 50%;
+                position: relative;
+
+                &.payment-col {
+                  .rate-value {
+                    font-size: 30px;
+                    line-height: 38px;
+                  }
+                }
+
+                .rate-value {
+                  font-size: 24px;
+                  line-height: 140%;
+                }
+
+                &:last-of-type {
+                  padding-left: calc(7.1vw - 1px);
+
+                  &:before {
+                    content: '';
+                    position: absolute;
+                    top: calc(50% - (42px / 2));
+                    left: 0;
+                    width: 1px;
+                    height: 42px;
+                    background-color: $color-secondary-light;
+                  }
+                }
+
+                &:first-child {
+                  flex-basis: calc(33% * 2);
+                }
+              }
+            }
+
+            &:last-of-type {
+              width: 100%;
+
+              .rate-col {
+                flex-basis: 33%;
+
+                &:nth-child(2) {
+                  padding-left: 15px;
+                }
+              }
+            }
+          }
+
+          .rate-col {
+
+            &.actions {
+              .btn {
+                margin-right: 0;
+                max-width: 190px;
+                width: 100%;
+                margin-bottom: 20px;
+
+                &:last-child {
+                  margin-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+
+        .rate-col {
+          &.actions {
+            flex-basis: 30%;
+            display: flex;
+            flex-direction: column;
+
+            .btn {
+              max-width: 190px;
+              margin-right: 0;
+              width: 100%;
+              margin-left: 0;
+              order: 2;
+              margin-bottom: 0;
+
+              &.btn-apply {
+                order: 1;
+                margin-bottom: 20px;
+              }
+
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+  #chkbox-options {
+    .rates-content-container {
+      padding-left: 15px;
+      padding-right: 15px;
+      flex-direction: column;
+    }
+
+    .chkbox-options-container {
+      display: flex;
+      margin-top: 5px;
+    }
+
+    .extra-options {
+      .custom-checkbox {
+        height: 20px;
+      }
+
+      &:not(.hidden) {
+        margin-left: 40px;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+
+  #parameters {
+    padding: 30px 15px 15px;
+    border-radius: 0px 0px 22px 22px;
+    margin-top: 0;
+
+    .par-header {
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+
+    .front-message {
+      background: rgba(174, 170, 250, .06);
+      margin-top: 20px;
+      max-width: 414px;
+      width: 100%;
+      padding-top: 8px;
+      padding-bottom: 8px;
+
+      ul {
+        li {
+          display: inline-block;
+          margin-right: 20px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    &:not(.not-open) {
+      .form-fields-container {
+        padding: 10px;
+      }
+    }
+
+    .form-fields-container {
+      margin-left: -10px;
+      margin-right: -10px;
+      margin-bottom: -10px;
+
+      .fields-group {
+        .field-group {
+          &:last-child {
+            width: 44%;
+          }
+        }
+      }
+
+      #fields {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: -5px;
+        margin-right: -5px;
+      }
+
+      .field {
+        flex-basis: calc(33% - 8px);
+      }
+
+      > .row {
+        margin: 0;
+      }
+
+      .additional-options-container {
+        .add-options-field {
+          margin: 5px auto 0 auto;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: $breakpoint-mobile) and (orientation: portrait) {
+  #parametersForm {
+    > .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .rqt-rates-container {
+
+    .cta-buttons-wrapper {
+      justify-content: normal;
+      flex-direction: column;
+      padding-left: 0;
+      padding-right: 0;
+
+      .btn {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 30px;
+        max-width: 100%;
+
+        &.btn-apply-now {
+          order: 1;
+        }
+
+        &.btn-track-rates {
+          order: 2;
+        }
+
+        &.btn-loan-officer {
+          order: 3;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .rates-wrapper {
+      padding-left: 0;
+      padding-right: 0;
+
+      &.no-third-tarty-fees {
+        .rate-item {
+          .rate-item-col {
+            .rate-col-row {
+              justify-content: end;
+
+              &:first-of-type {
+                .rate-col:first-child {
+                  flex-basis: 50%;
+                }
+              }
+
+              &:last-of-type {
+                .rate-col:nth-child(2) {
+                  padding-left: 40px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.loading {
+        &:after {
+          width: 100%;
+        }
+
+        &:before {
+          top: calc(120px - (56px / 2));
+        }
+      }
+
+      .rate-item {
+        flex-direction: column;
+        max-height: 100%;
+        padding: 15px 15px 30px;
+
+        .rate-col {
+          &.actions {
+            width: 100%;
+            flex-direction: row;
+            margin-top: 40px;
+
+            .btn {
+              max-width: 100%;
+              min-width: unset;
+
+              &.btn-apply {
+                margin-bottom: 0;
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+
+        .rate-item-col {
+          width: 100%;
+
+          .rate-col-row {
+            &:first-of-type {
+              .rate-col {
+                &:first-child {
+                  flex-basis: 80%;
+                }
+
+                &:last-of-type {
+                  padding-left: 40px;
+                  flex-basis: calc(33% + 44px);
+
+                  .rate-col {
+
+                  }
+                }
+              }
+            }
+
+            &:last-of-type {
+              .rate-col {
+                flex-basis: 27%;
+
+                &:nth-child(2) {
+                  padding-left: 5px;
+                }
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #chkbox-options {
+    .rates-content-container {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .chkbox-options-container {
+      flex-direction: column;
+    }
+
+    .extra-options {
+
+      .custom-checkbox {
+        height: 20px;
+      }
+
+      &:not(.hidden) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  #parameters {
+    border-radius: 0px 0px 22px 22px;
+    margin-top: 0;
+
+    .form-fields-container {
+      margin-left: $mob-inner-form-offset;
+      margin-right: $mob-inner-form-offset;
+      margin-bottom: $mob-inner-form-offset;
+
+      .additional-options-container {
+        .add-options-field {
+          margin: 5px 0 0 0;
+        }
+      }
+
+      #fields {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      #loan_purpose_tabs {
+        width: 100%;
+
+        > input + label {
+          padding: 15px;
+          max-width: 31%;
+          width: 100%;
+
+          &:last-of-type {
+            max-width: 38%;
+          }
+        }
+      }
+
+      .field {
+        flex-basis: 100%;
+        margin-right: 0;
+        margin-left: 0;
+
+        select {
+          width: 100%;
+        }
+
+        &.action-fields {
+          flex-basis: 100%;
+          margin-top: 45px;
+        }
+      }
+
+    }
+
+    .par-header {
+      .col {
+        width: 100%;
+        margin-right: 0;
+      }
+
+      .city-zip-header {
+        a[data-toggle=modal-popover] {
+          padding-left: 0;
+          margin-top: 13px;
+        }
+
+        .modal-popover {
+          margin-top: 30px;
+          margin-left: 0;
+          width: 100%;
+          min-width: 100%;
+        }
+      }
+
+      .header-row {
+        flex-direction: column;
+      }
+    }
+
+  }
+}
+
+
+@media screen and (max-width: $breakpoint-phone) and (orientation: portrait) {
+  .rqt-rates-container {
+    .rates-wrapper {
+      .rate-item {
+        .rate-item-col {
+          .rate-col-row {
+            &:first-of-type {
+              .rate-col {
+                &:last-of-type {
+                  flex-basis: calc(33% + 50px);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

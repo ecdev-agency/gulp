@@ -1,0 +1,43 @@
+.typ-success {
+  width: 100%;
+  max-width: 700px;
+  margin: 30px auto 115px auto;
+  text-align: center;
+
+  .typ-icon {
+    margin-bottom: 26px;
+  }
+
+  .typ-title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 140%;
+    margin-bottom: 15px;
+  }
+
+  .typ-text {
+
+  }
+
+  .btn {
+    border-radius: 4px;
+    max-width: 277px;
+    width: 100%;
+    margin-top: 22px;
+    min-height: 52px;
+    line-height: 20px;
+  }
+}
+
+
+@media (max-width: $breakpoint-mobile) and (orientation: portrait) {
+  .typ-success {
+
+    .typ-title {
+      font-size: 20px;
+      line-height: 140%;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,118 @@
+@import "../variables";
+@import "../modules/main_post_item";
+@import "../modules/mortgage_rate_partners";
+@import "../modules/mortgage_rate_online_tools";
+@import "../modules/instant_mortgage_rate_quote_main";
+@import "../modules/mortgage_rates_reviews_slider";
+@import "../modules/mortgage_rate_latest_posts_four_col";
+@import "../modules/home_reviews";
+
+.inner-page .btn-primary {
+    text-transform: inherit;
+}
+
+section.big_title {
+    padding: 100px 0;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-bottom: 30px;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.25);
+    }
+    h1 {
+        color: $color-white;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+    p.title {
+        font-size: 22px;
+        text-align: center;
+        color: $color-white;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.some_books {
+    margin-top: 50px;
+    .items {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        .item {
+            width: 250px;
+            box-sizing: border-box;
+            padding: 10px;
+            text-align: center;
+            img {
+                margin: 0 auto;
+                max-height: 250px;
+            }
+        }
+    }
+}
+
+.get_started_section {
+    h2 {
+        text-align: center;
+        margin-bottom: 0;
+        color: $color-white;
+    }
+    p.sub-title {
+        text-align: center;
+    }
+}
+
+#client_reviews_section .btn {
+    display: block;
+    margin: 32px auto;
+    max-width: 198px;
+}
+
+.min_gap {
+    margin-top: 44px;
+}
+
+.download_block {
+    img {
+        margin: 15px auto;
+        display: block;
+    }
+    .btn {
+        margin: 15px 0 32px;
+    }
+}
+
+.get_started_section.min_padding {
+    padding: 32px 0;
+}
+
+#latest_blog_posts_section .section-title {
+    margin-bottom: 28px;
+}
+
+@media screen and (max-width: 992px) {
+    .some_books {
+        margin-top: 40px;
+        .items .item {
+            width: 50%;
+        }
+    }
+    .get_started_section.min_padding p {
+        margin-bottom: 0;
+    }
+    section.big_title {
+        margin-bottom: 50px;
+    }
+    .gap {
+        height: 72px;
+    }
+}

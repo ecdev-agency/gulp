@@ -1,0 +1,54 @@
+.pageContent {
+    margin: 45px auto;
+}
+.section {
+    padding-top: 45px;
+}
+.content-container {
+    margin-bottom: 60px;
+
+    .main-title {
+        font-size: 24px;
+        line-height: 1.33;
+        color: $color-body;
+        margin-bottom: 12px;
+    }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+    .content-container {
+        margin-bottom: 30px;
+    }
+    .reviews {
+        margin-top: 0;
+    }
+    .pageContent {
+        margin-top: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.columns {
+    &__content {
+        margin-bottom: 45px;
+    }
+}
+@media screen and (max-width: $breakpoint-medium) {
+    .columns {
+        &__content {
+            img{
+                display: block;
+                margin: auto;
+                float: none;
+            }
+        }
+    }
+}
+@media screen and (max-width: $breakpoint-mobile) {
+    .columns {
+        &__content {
+            margin-bottom: 30px;
+        }
+    }
+}

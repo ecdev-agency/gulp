@@ -1,0 +1,116 @@
+.toggle-radio {
+  min-width: 144px;
+  height: 48px;
+  border: 1px solid $color-primary;
+  box-sizing: border-box;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.toggle-radio.small-size {
+  min-width: 144px;
+  height: 33px;
+  border-radius: 4px;
+  border: 0;
+  margin: 10px;
+}
+
+.toggle-radio.small-size > input:first-of-type + label {
+  border-radius: 4px 0px 0px 4px;
+}
+
+.toggle-radio.small-size > input:last-of-type + label {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.toggle-radio.small-size > input + label:not(:last-of-type) {
+  border-right: 0;
+}
+
+.toggle-radio.small-size > input:checked + label {
+  border: 1px solid $color-primary;
+  z-index: 2;
+  position: relative;
+}
+
+.toggle-radio.small-size > input + label {
+  padding: 0px 10px;
+  line-height: 31px;
+  border: 1px solid #C4C4C4;
+  margin-left: -1px;
+  z-index: 1;
+}
+
+
+.toggle-radio.small-size > input:checked + label {
+  font-weight: 400;
+}
+
+.toggle-radio.three {
+  min-width: 264px;
+}
+
+.toggle-radio.three.small-size {
+  min-width: calc(128px * 3);
+  padding-left: 1px;
+}
+
+.toggle-radio > input:checked + label {
+  background: $color-secondary-hover;
+  font-weight: 500;
+  color: $color-primary;
+}
+
+.toggle-radio > input + label:not(:last-of-type) {
+  border-right: 1px solid $color-primary;
+}
+
+
+.toggle-radio > input + label[for="alert_Once"] {
+  width: 130px;
+}
+
+/* Rounded corners */
+.toggle-radio {
+  border-radius: 8px;
+}
+
+/* //////////////////////////
+CORE STYLES BELOW - NO TOUCHY
+////////////////////////// */
+.toggle-radio {
+  display: inline-flex;
+}
+
+.toggle-radio > input[type='radio'] {
+  display: none;
+}
+
+.toggle-radio > input[disabled] + label {
+  opacity: 0.50;
+}
+
+.toggle-radio > input[disabled] + label:hover {
+  cursor: not-allowed;
+}
+
+.toggle-radio > input + label {
+  display: block;
+  width: 50%;
+  margin-bottom: 0;
+  padding: 5px 10px;
+  cursor: pointer;
+  line-height: 36px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  color: $color-body;
+  text-align: center;
+  margin-bottom: 0;
+  background: $color-white;
+}
+
+.toggle-radio > input:checked + label {
+  transition: none;
+}

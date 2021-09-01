@@ -1,0 +1,51 @@
+.gk-social-buttons {
+
+  &[data-inactive-mobile] {
+
+  }
+
+  &:not(.inner-content) {
+    width: 46px;
+    height: auto;
+    position: fixed;
+    top: 40%;
+    left: 2%;
+  }
+
+  &.inner-content {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 35px;
+  }
+
+  a {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    margin: 0 0 14px 0;
+    color: $color-title;
+    background: $color-white;
+    border: 1px solid #EBEBEB;
+    box-sizing: border-box;
+    line-height: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+      text-decoration: none;
+      color: $color-primary;
+      background: #F1F9ED;
+      border: 1px solid #EBEBEB;
+
+      svg path {
+        fill: $color-primary;
+      }
+    }
+  }
+}

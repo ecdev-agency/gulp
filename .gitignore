@@ -1,0 +1,12 @@
+node_modules
+node_modules/*
+
+old_gulp
+old_gulp/*
+
+dist
+dist/*
+
+ss.txt
+
+package-lock.json

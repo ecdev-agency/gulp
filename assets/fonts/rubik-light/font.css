@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Rubik-Light';
+  src: url('Rubik-Light.eot');
+  src: url('Rubik-Light.eot?#iefix') format('embedded-opentype'),
+       url('Rubik-Light.svg#Rubik-Light') format('svg'),
+       url('Rubik-Light.ttf') format('truetype'),
+       url('Rubik-Light.woff') format('woff'),
+       url('Rubik-Light.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+

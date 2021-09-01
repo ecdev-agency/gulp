@@ -1,0 +1,96 @@
+
+#competition_section {
+  &.section {
+    padding-bottom: calc(96px - 52px);
+  }
+}
+
+.competition-items.padding-top-40{
+  padding-top: 96px;
+}
+
+.competition-items {
+  .competition-item {
+
+    > div {
+      margin-bottom: 52px;
+    }
+
+
+    .item-title {
+      font-size: 20px;
+      line-height: 23.7px;
+      margin-bottom: 8px;
+    }
+
+    .item-description {
+      margin: 0;
+
+      font-size: 16px;
+      line-height: 160%;
+      color: $color-body;
+    }
+  }
+}
+
+
+
+@media screen and (max-width: $breakpoint-medium) {
+
+  #competition_section {
+    .competition-items {
+      .competition-item {
+
+
+        &:nth-last-of-type(-n+2) {
+          >div {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+
+  #competition_section {
+
+    &.section {
+      .section-title {
+        margin-bottom: 36px;
+      }
+
+    }
+
+    .competition-items {
+      .competition-item {
+
+        .item-title {
+          font-size: 16px;
+          line-height: 19px;
+        }
+
+        > div {
+          margin-bottom: 36px;
+        }
+
+        &:nth-last-of-type(-n+2) {
+          >div {
+            margin-bottom: 20px;
+          }
+        }
+
+        &:last-child {
+          >div {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    &.section {
+      padding-bottom: 72px;
+    }
+  }
+}

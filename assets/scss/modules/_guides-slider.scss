@@ -1,0 +1,169 @@
+.guidesList {
+  overflow: hidden;
+  margin: 140px 0;
+  @include media(sm) {
+    margin: 90px 0;
+  }
+  &-alt{
+    margin-top: -80px;
+  }
+  &-noResults{
+    margin: 60px 0;
+  }
+  &__titleWrap {
+    justify-content: space-between;
+  }
+
+  &__title {
+    max-width: calc(100% - 80px);
+    margin-bottom: 0;
+    @include media(sm) {
+      max-width: 100%;
+    }
+  }
+
+  &__buttons {
+    position: relative;
+    @include media(sm) {
+      margin-top: 20px;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    border: 1px solid $color-body-secondary;
+    background: $color-white;
+    padding: 0;
+    color: $color-primary;
+    outline: none;
+
+    &:hover {
+      background-color: $color-secondary-hover;
+      border-color: $color-primary;
+    }
+
+    &:active {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+
+    &-prev {
+      transform: rotate(180deg);
+    }
+    &-next {
+      margin-left: 11px;
+      svg {
+        margin-left: 3px;
+      }
+    }
+
+    &.disabled {
+      color: $color-body-secondary;
+      pointer-events: none;
+    }
+  }
+}
+
+.guidesSlider {
+  padding-top: 50px;
+  @include media(sm) {
+    padding-top: 30px;
+  }
+  &-alt{
+    padding-top: 0;
+  }
+  .slick {
+    &-list {
+      margin: 0 -15px;
+    }
+  }
+
+  &__text {
+    @include media(xs) {
+      width: 100%;
+    }
+  }
+
+  &__item {
+    margin: 0 15px;
+    &:hover{
+      .guidesSlider__btn{
+        color:$color-primary;
+      }
+    }
+    &-alt {
+      margin: 0 0 30px 0;
+      .guidesSlider__itemInner{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+  }
+  &__itemInner {
+    background-color: $color-secondary-light-plus;
+    padding: 30px 20px 32px 30px;
+    min-height: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  &__date {
+    color: $color-body-secondary;
+    margin-bottom: 30px;
+    display: block;
+    @include media(xs) {
+      width: 100%;
+    }
+  }
+  &__title {
+    margin-bottom: 18px;
+    word-break: break-word;
+    @include media(xs) {
+      width: 100%;
+    }
+  }
+  &__link {
+    display: inline-block;
+    color: $color-title;
+    position: relative;
+    padding-bottom: 15px;
+    &:hover {
+      color: $color-primary;
+      text-decoration: none;
+    }
+    &:before{
+      content:'';
+      position: absolute;
+      top:100%;
+      width: 30px;
+      height: 3px;
+      background-color: $color-primary;
+    }
+  }
+
+  &__content {
+    @include media(xs) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+  }
+
+  &__btn {
+    color:transparent;
+    font-size: $smallsize;
+    line-height: $smallineheight;
+  }
+
+  &__btnWrap {
+    margin-top: 50px;
+    @include media(xs) {
+      margin-top: 35px;
+    }
+  }
+}

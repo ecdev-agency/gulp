@@ -1,0 +1,98 @@
+.guideHead {
+  min-height: 270px;
+  padding: 55px 0;
+  color: $color-white;
+  position: relative;
+  @include media(sm) {
+    min-height: 280px;
+    padding: 22px 0;
+  }
+  @media (max-height: 500px) and (max-width: 767px) {
+    min-height: 1px;
+  }
+  &-alt{
+    @include media(sm) {
+      padding-bottom: 90px;
+    }
+  }
+  &-ptSm{
+    @include media_min(md) {
+      padding-top: 17px;
+    }
+  }
+  &-smTitle{
+    .guideHead__title {
+      width: calc(100% - 480px);
+      @include media(sm) {
+        width: 100%;
+      }
+    }
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 370px;
+    background: url("../../assets/img/guide/guide-head.png") no-repeat right;
+    @include media(sm) {
+      display: none;
+    }
+  }
+
+
+
+  .formSearch {
+    margin-left: auto;
+    @include media(sm) {
+      max-width: 400px;
+      margin-left: 0;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    @include media(sm) {
+      display: block;
+    }
+  }
+
+  &__title {
+    color: $color-white;
+    max-width: calc(100% - 120px);
+    margin-bottom: 10px;
+    @include media(sm) {
+      text-align: left;
+      max-width: 100%;
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+
+  &__text {
+    max-width: 750px;
+    @include media(sm) {
+      margin-top: 5px;
+    }
+  }
+
+  &__btnWrap {
+    width: 100%;
+  }
+
+  &__btn {
+    font-size: 16px;
+    margin-bottom: 10px;
+    @include media(sm) {
+      margin: 0 auto 15px auto;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

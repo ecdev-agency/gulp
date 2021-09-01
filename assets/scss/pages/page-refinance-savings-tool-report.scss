@@ -1,0 +1,860 @@
+@import "../variables";
+@import "../mixins";
+// rqt main
+@import "../modules/_rqt-page";
+
+// popups & another windows
+@import "../modules/_rqt-print";
+@import "../modules/_ttlo-popup";
+@import "../modules/_rat-popup";
+@import "../modules/_track-rates-popup";
+@import "../modules/_rqt_view_rates_window";
+@import "../modules/_rqt_modal_window";
+
+@import "../modules/tabulation-form-input";
+@import "../pages/page-mortgage-calculator-report";
+@import "page-refinance-savings-tool";
+
+.rest_report {
+  padding-top: 0;
+  margin-bottom: 0;
+  background-color: #fff;
+
+  section {
+    padding-bottom: 0;
+  }
+
+  &-back {
+    position: absolute;
+    left: 15px;
+    padding: 0 0 0 36px;
+    display: inline-block;
+    font-weight: normal;
+    font-size: 16px;
+    color: #fff;
+    top: -37px;
+
+    &::before {
+      $size: 26px;
+
+      content: '';
+      display: block;
+      position: absolute;
+      width: $size;
+      height: $size;
+      border-radius: 50%;
+      background: rgba(251, 251, 251, 0.15) url('../img/rst/icon_arrow_left_white.svg') center center no-repeat;
+      left: 0;
+      top: 0;
+
+    }
+
+  }
+
+  &__heading {
+    @include media(sm) {
+      background-size: cover;
+    }
+
+    .row {
+      flex-wrap: nowrap;
+      @include media(sm) {
+        flex-wrap: wrap;
+      }
+    }
+
+    .mortgage_report__heading-share {
+      @include media(sm) {
+        margin-bottom: 67px;
+      }
+    }
+
+    &-title {
+      @include media(sm) {
+        margin-bottom: 5px;
+        padding-top: 5px;
+      }
+    }
+
+    &-intext {
+      @include media(md) {
+        padding-bottom: 30px;
+      }
+      @include media(sm) {
+        padding-bottom: 28px;
+      }
+    }
+  }
+
+  &__excerpt {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #fff;
+    display: block;
+    padding: 4px 0 0 0;
+    margin: 0;
+  }
+
+  &__scenario {
+    position: relative;
+    z-index: 3;
+    margin: -50px 0 148px 0;
+    @include media(lg) {
+      margin-bottom: 60px;
+    }
+    @include media(md) {
+      margin-top: 40px;
+      margin-bottom: 35px;
+    }
+    @include media(sm) {
+      margin-top: -24px;
+      margin-bottom: 72px;
+    }
+
+    .row {
+      $gutter: 7px;
+
+      display: flex;
+      flex-wrap: nowrap;
+      margin-left: -#{$gutter};
+      margin-right: -#{$gutter};
+      @include media(md) {
+        margin-left: -15px;
+        margin-right: -15px;
+        flex-wrap: wrap;
+      }
+
+      [class*=col-] {
+        display: flex;
+        padding-left: $gutter;
+        padding-right: $gutter;
+        @include media(md) {
+          padding-left: 15px;
+          padding-right: 15px;
+          margin-bottom: 30px;
+        }
+        @include media(sm) {
+          margin-bottom: 20px;
+        }
+
+        &.hidden-mobile {
+          @include media(sm) {
+            display: none;
+
+          }
+        }
+
+        &:nth-child(2) {
+          > * {
+            border-bottom-color: #1982C4;
+          }
+        }
+
+        &:nth-child(3) {
+          > * {
+            border-bottom-color: #EA5B0B;
+          }
+        }
+
+        &:nth-child(4) {
+          > * {
+            border-bottom-color: #EEBD4B;
+          }
+        }
+      }
+    }
+
+    &-item {
+      $radius: 8px;
+
+      border-radius: $radius;
+      background-color: #fff;
+      padding: 30px 15px;
+      width: 100%;
+      position: relative;
+
+      .best {
+        position: absolute;
+        z-index: 3;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 12px;
+        color: #fff;
+        border-radius: 99px;
+        height: 33px;
+        display: flex;
+        align-items: center;
+        padding: 0 19px;
+        right: 16px;
+        top: -16px;
+        background-color: #1982C4;
+      }
+
+      &.default {
+        background-color: $color-secondary-light-plus;
+      }
+
+      &:not(.default) {
+        box-shadow: 0px 8px 30px rgba(0, 20, 160, 0.1);
+        border-bottom: 3px solid;
+      }
+
+      &-header {
+        font-weight: 500;
+        font-size: 16px;
+        white-space: nowrap;
+        margin: 0 0 18px 0;
+      }
+
+      &-content {
+
+        .list {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          font-size: 14px;
+          line-height: 1.3;
+
+          > li {
+            display: flex;
+            justify-content: space-between;
+
+            &:not(:last-child) {
+              margin: 0 0 11px 0;
+              @include media(sm) {
+                margin: 0 0 13px 0;
+              }
+            }
+
+            span {
+              display: inline-block;
+              padding: 0 10px 0 0;
+            }
+
+            strong {
+              font-weight: 500;
+            }
+
+          }
+        }
+
+      }
+
+    }
+
+    &-table {
+      display: none;
+      @include media(sm) {
+        display: block;
+      }
+
+      &-tbl {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        display: table;
+
+        .best {
+          $background: #1982C4;
+
+          position: absolute;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 12px;
+          height: 33px;
+          display: flex;
+          align-items: center;
+          color: #fff;
+          padding: 0 10px;
+          background-color: $background;
+          border-radius: 99px;
+          left: 0;
+          top: 0px;
+          text-transform: uppercase;
+
+          &::after {
+            content: '';
+            position: absolute;
+            border: 10px solid transparent;
+            border-top: 10px solid $background;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -15px;
+          }
+        }
+
+        td, th {
+          padding: 12px;
+          border: none;
+          position: relative;
+        }
+
+        thead {
+          > tr {
+            > th {
+              font-weight: 500;
+              font-size: 16px;
+              padding-bottom: 0;
+              padding-top: 38px;
+
+              &:first-child {
+                padding-left: 0;
+              }
+              &:last-child {
+                padding-right: 0;
+              }
+            }
+          }
+        }
+
+        tbody {
+          > tr {
+            > td {
+              font-weight: 500;
+              font-size: 14px;
+
+              &:first-child {
+                padding-left: 0;
+              }
+              &:last-child {
+                padding-right: 0;
+              }
+
+              span {
+                font-weight: normal;
+                font-size: 14px;
+              }
+
+              &.border {
+                border-bottom: 1px solid $color-secondary-light;
+                padding-bottom: 0px;
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+  &__table {
+    &-content {
+      background-color: $color-secondary-light-plus;
+      padding: 42px 0 45px 0;
+      @include media(sm) {
+        padding: 0;
+        background-color: #fff;
+      }
+    }
+
+    &-tbl {
+      .mortgage_report__shedule-table-info {
+        @include media(md) {
+          display: none;
+        }
+        @include media(xs) {
+          display: flex;
+        }
+      }
+
+      [type="text"],
+      [type="number"] {
+        line-height: 16px;
+      }
+
+      table {
+        $mobile-width: 130px;
+
+        tbody {
+          span {
+            font-weight: normal;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: $color-body-secondary;
+          }
+        }
+        .mobile{
+          &-title {
+
+          }
+        }
+
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+          @include media(sm) {
+            display: flex;
+            flex-wrap: wrap;
+          }
+        }
+
+        th, td {
+          @include media(sm) {
+            width: $mobile-width;
+          }
+        }
+
+        thead {
+          tr {
+            @include media(sm) {
+              width: 100%;
+              display: flex;
+              background-color: $color-secondary;
+              flex-wrap: nowrap;
+              justify-content: space-between;
+            }
+
+            > th {
+              @include media(sm) {
+                flex: 1 0 auto;
+              }
+              &:first-child {
+                @include media(sm) {
+                  display: none;
+                }
+              }
+            }
+
+          }
+        }
+        tbody {
+          @include media(sm) {
+            width: 100%;
+            padding-top: 16px;
+          }
+          @include media(xs) {
+            padding-top: 90px;
+          }
+          > tr {
+            @include media(sm) {
+              width: 100%;
+              display: flex;
+              flex-wrap: nowrap;
+              justify-content: space-between;
+              position: relative;
+              padding: 45px 0 0 0;
+            }
+
+            &:hover {
+              > td {
+                @include media(sm) {
+                  background-color: #fff !important;
+                }
+              }
+            }
+
+            > td {
+              vertical-align: middle;
+
+              &:first-child {
+                @include media(sm) {
+                  width: 100%;
+                  flex: 0 1 100%;
+                  padding: 0 0 4px 0;
+                  position: absolute;
+                  left: 0;
+                  right: 0;
+                  top: 10px;
+                  display: block;
+                  border: none;
+                }
+              }
+              &:not(:first-child) {
+                @include media(sm) {
+                  border-bottom: none;
+                  border-top: 1px solid $color-secondary-light;
+                  flex: 1 0 auto;
+                }
+              }
+            }
+          }
+        }
+
+      }
+
+      &-input {
+        position: relative;
+
+        input {
+          &[type="text"] {
+            &:not(.field-group) {
+              position: relative;
+              z-index: 1;
+              padding: 0 8px 0 28px;
+              height: 36px;
+              max-width: 100px;
+              min-width: 90px;
+            }
+          }
+        }
+
+        i {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          color: $color-body-secondary;
+          position: absolute;
+          left: 11px;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 2;
+        }
+      }
+    }
+
+
+
+  }
+
+  &__total {
+    margin: 0 0 150px 0;
+    @include media(lg) {
+      margin: 0 0 60px 0;
+    }
+    @include media(sm) {
+      margin: 0 0 90px 0;
+    }
+
+    &-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: stretch;
+
+      &-left,
+      &-right {
+        display: flex;
+        flex-direction: column;
+        width: calc(50% - 12px);
+        @include media(md) {
+          width: 100%;
+        }
+      }
+
+      &-left {
+        padding: 30px 0 15px 0;
+        @include media(md) {
+          padding: 0 0 60px 0;
+        }
+        @include media(sm) {
+          padding: 0 0 10px 0;
+        }
+
+        .title {
+          margin: 0 0 15px 0;
+        }
+
+        .rest_calc__plan_slider {
+          margin: 0;
+          padding-bottom: 0;
+          padding-right: 0;
+          padding-left: 0;
+          @include media(md) {
+            //display: none;
+            margin-bottom: 100px;
+          }
+        }
+      }
+
+      &-right {
+        justify-content: space-between;
+        padding: 30px;
+        background: $color-secondary url('../img/rst/report_total_background.svg') right center no-repeat;
+        border-radius: 8px;
+        @include media(sm) {
+          padding: 30px 15px;
+          background-image: none;
+        }
+
+        &-footer {
+          margin-top: auto;
+          padding: 60px 0 0 0;
+
+          .btn {
+            $padd: 32px;
+
+            padding-left: $padd;
+            padding-right: $padd;
+            @include media(sm) {
+              width: 100%;
+            }
+
+          }
+        }
+
+        .title {
+          color: #fff;
+        }
+
+        .list {
+          $gutter: 15px;
+
+          list-style: none;
+          display: flex;
+          flex-wrap: wrap;
+          margin: 0;
+          padding: 0;
+          margin: 0 -#{$gutter};
+          color: #fff;
+          @include media(lg) {
+            margin: 0 -7px;
+          }
+          @include media(sm) {
+
+          }
+
+          > li {
+            display: flex;
+            flex-direction: column;
+            padding: 0 $gutter;
+            width: 33.3%;
+            margin-bottom: 30px;
+            @include media(lg) {
+              padding: 0 7px;
+            }
+            @include media(sm) {
+              width: 100%;
+            }
+
+            &:last-child {
+              @include media(sm) {
+                margin: 0;
+              }
+            }
+
+            span {
+              font-weight: 500;
+              font-size: 30px;
+              line-height: 1.4;
+              @include media(lg) {
+                font-size: 22px;
+              }
+              @include media(sm) {
+                font-size: 30px;
+              }
+            }
+
+            small {
+              font-weight: normal;
+              font-size: 16px;
+              line-height: 1.4;
+              @include media(lg) {
+                font-size: 13px;
+              }
+              @include media(sm) {
+                font-size: 16px;
+              }
+            }
+
+            &.disable {
+              span {
+                color: $color-body-secondary;
+              }
+
+              small {
+                color: $color-body-secondary;
+              }
+            }
+          }
+        }
+
+      }
+    }
+
+    &-charcontent {
+      font-size: 16px;
+
+      &-excerpt {
+        margin: 0 0 20px 0;
+        font-weight: normal;
+        font-size: 16px;
+        color: $color-body;
+        @include media(sm) {
+          margin: 0 0 15px 0;
+        }
+
+        strong {
+          font-weight: 500;
+          color: $color-secondary;
+        }
+      }
+
+    }
+
+    &-legend{
+      &-mobile {
+        $gutter: 15px;
+
+        display: none;
+        margin: 0 -#{$gutter};
+        flex-wrap: wrap;
+        list-style: none;
+        position: relative;
+        margin-top: -30px;
+
+        @include media(xs) {
+          display: flex;
+        }
+        @media (max-width: 463px) {
+          margin-top: 12px;
+        }
+
+        > li {
+          display: flex;
+          padding: 0 $gutter;
+          width: 50%;
+          margin-bottom: 27px;
+
+          .item {
+            position: relative;
+            padding: 0 0 0 17px;
+
+            &::before {
+              $size: 6px;
+
+              content: '';
+              display: block;
+              position: absolute;
+              width: $size;
+              height: $size;
+              border-radius: 50%;
+              left: 0;
+              top: 10px;
+            }
+          }
+
+          &.purple {
+            .item{
+              &::before {
+                background-color: #6A4C93;
+              }
+            }
+          }
+          &.blue {
+            .item{
+              &::before {
+                background-color: #1982C4;
+              }
+            }
+          }
+          &.orange {
+            .item{
+              &::before {
+                background-color: #EA5B0B;
+              }
+            }
+          }
+          &.yellow {
+            .item{
+              &::before {
+                background-color: #EEBD4B;
+              }
+            }
+          }
+
+
+          span {
+            font-weight: normal;
+            font-size: 14px;
+            display: block;
+            margin: 0 0 4px 0;
+          }
+          strong {
+            font-weight: 500;
+            font-size: 14px;
+          }
+        }
+
+      }
+    }
+  }
+
+  &__charts {
+    background-color: #fff;
+    padding: 150px 0 0 0;
+    @include media(md) {
+      padding: 75px 0 0 0;
+    }
+
+    &-header {
+      margin: 0 0 50px 0;
+    }
+
+    &-footer {
+      text-align: center;
+      padding: 60px 0;
+
+      @include media(sm) {
+        padding: 50px 0 110px 0;
+      }
+      @include media(xs) {
+        padding-top: 25px;
+      }
+
+      .btn {
+        $padd: 31px;
+
+        padding-right: $padd;
+        padding-left: $padd;
+
+        @include media(xs) {
+          width: 100%;
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+    }
+
+    &-title {
+      margin: 0;
+    }
+
+    .rest_report__total-legend-mobile {
+      @media (max-width: 483px) {
+        margin-top: -45px;
+      }
+      @media (max-width: 424px) {
+        margin-top: -95px;
+      }
+    }
+
+  }
+
+}
+
+.highcharts{
+  &-credits {
+
+  }
+  &-text{
+    &-outline {
+      fill: none;
+      stroke-width: 0;
+    }
+  }
+  &-data{
+    &-label {
+      text {
+        @include media(sm) {
+          display: none;
+        }
+      }
+    }
+  }
+  &-xaxis{
+    &-labels {
+      @include media(xs) {
+        display: none !important;
+      }
+    }
+  }
+}
+
+#chart_table {
+  overflow: unset !important;
+}
+

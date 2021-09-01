@@ -1,0 +1,166 @@
+#instant-mortgage-rate-quote-page {
+  padding-top: 0;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 1.33;
+  color: $color-body;
+}
+
+.full-section {
+  position: relative;
+  padding: 56px 0;
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &.green::before {
+    background: #73C047;
+    opacity: 0.1;
+  }
+
+  &.gray::before {
+    background: #EFEFEF;
+  }
+
+  .section-title, h2 {
+    margin-bottom: 24px;
+  }
+}
+
+#mrct {
+  width: 100%;
+  position: relative;
+  margin-top: -39px;
+}
+
+.apply-action-container {
+
+  .btn {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.item-icon {
+  max-height: 48px;
+}
+
+.item-icon-c {
+  height: 48px;
+  min-width: 48px;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+
+.section {
+  padding: 96px 0;
+
+
+  .section-title {
+    margin-bottom: 53px;
+  }
+}
+
+
+@media screen and (max-width: $breakpoint-medium) {
+
+}
+
+
+@media screen and (max-width: $breakpoint-mobile) {
+  #instant-mortgage-rate-quote-page {
+    overflow-x: hidden;
+  }
+  .section {
+    .section-title {
+      margin-bottom: 40px;
+    }
+  }
+
+  #mrct {
+    overflow-x: hidden;
+  }
+
+  .item-icon-c {
+    margin-bottom: 20px;
+  }
+
+  .full-section {
+    padding: 40px 0;
+
+    .section-title, h2 {
+      margin-bottom: 16px;
+    }
+  }
+
+  .content {
+    h2 {
+      font-size: 20px;
+      line-height: 140%;
+    }
+  }
+
+  #content_section {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    p {
+      &:not(.apply-action-container) {
+        margin-bottom: 24px;
+      }
+
+    }
+
+    .apply-action-container {
+      margin-bottom: 0;
+
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+
+  .section {
+    padding: 72px 0;
+
+
+    .section-title {
+      margin-bottom: 45px;
+    }
+  }
+
+  .item-icon-c {
+    height: auto;
+  }
+
+  .item-icon {
+    max-width: 40px;
+    max-height: 36px;
+  }
+
+}
+
+@media only screen and (min-device-width: $breakpoint-phone-small) and (max-device-width: $breakpoint-mobile-landscape) and (orientation: landscape) {
+  #content_section {
+
+    .apply-action-container {
+      .btn {
+        width: auto;
+      }
+    }
+  }
+}

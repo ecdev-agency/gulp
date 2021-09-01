@@ -1,0 +1,65 @@
+#tooltip {
+  text-align: left;
+  background-color: $color-white;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 100;
+  padding: 6px 15px 10px 15px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 170%;
+  color: $color-body;
+  box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.15);
+
+  &:after /* triangle decoration */
+  {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid $color-white;
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    margin-left: -8px;
+  }
+
+  &.bottom {
+    &:after {
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid $color-white;
+      border-top: 8px solid transparent;
+      left: 20px;
+      top: -8px;
+      bottom: auto;
+      margin-left: -8px;
+    }
+  }
+
+  &.top {
+    &:after {
+      border-top-color: transparent;
+      border-bottom: 8px solid $color-white;
+      top: -20px;
+      bottom: auto;
+    }
+  }
+
+  &.left {
+    &:after {
+      left: 10px;
+      margin: 0;
+    }
+  }
+
+  &.right {
+    &:after {
+      right: 10px;
+      left: auto;
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,84 @@
+.guideTerms {
+  margin: -70px 0 140px 0;
+  @include media(sm) {
+    margin-bottom: 90px;
+  }
+  &__col {
+    margin-bottom: 38px;
+    @include media(sm) {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.guideTerm {
+  background: $color-white;
+  border-radius: 4px;
+  padding: 30px 20px 30px 30px;
+  border: 1px solid $color-secondary-light;
+  box-sizing: border-box;
+  transition: all .25s ease;
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  @include media(sm) {
+    padding: 30px;
+  }
+  &:hover {
+    box-shadow: 0 8px 30px rgba(0, 20, 160, 0.1);
+    border-color: transparent;
+    .guideTerm__btn {
+      color:$color-primary;
+    }
+    .btnIcon__icon{
+      //border-color: $color-primary;
+      //background-color: $color-secondary-hover;
+    }
+  }
+
+  &__content {
+    width: 100%;
+  }
+
+  &__iconLink {
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+  &__icon {
+    display: block;
+    height: 70px;
+    width: auto;
+  }
+  &__title{
+    margin-bottom: 5px;
+  }
+  &__link {
+    color: $color-secondary;
+    &:hover{
+      color: $color-primary;
+    }
+  }
+
+  &__btnWrap {
+    width: 100%;
+    margin-top: 45px;
+    @include media(md) {
+      margin-top: 30px;
+    }
+  }
+
+  &__btn {
+    line-height: 27px;
+    color: transparent;
+  }
+
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+

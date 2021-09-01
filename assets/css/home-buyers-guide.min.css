@@ -1,0 +1,1 @@
+.video-poster{position:relative;display:block}.video-poster:before{content:"";position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;width:22%;height:40px;background:url(../img/samm/play_buttom_icon.svg) no-repeat center}ul{padding-left:20px}ul>li{font-family:"Rubik",sans-serif;font-weight:300}

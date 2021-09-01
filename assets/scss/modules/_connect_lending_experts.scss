@@ -1,0 +1,156 @@
+
+.connect-lending-experts {
+  background-size: cover;
+  position: relative;
+  color: $color-white;
+  background-repeat: no-repeat;
+  padding-left: 55px;
+  padding-right: 55px;
+  padding-bottom: 83px;
+  padding-top: 83px;
+  background-position: center bottom;
+  background-color: $color-secondary;
+
+  .section-title {
+    color: $color-white;
+    margin-bottom: 13px;
+  }
+
+  .section-description {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    margin-bottom: 53px;
+    color: $color-secondary-bright;
+  }
+
+  .actions {
+    width: 100%;
+    max-width: calc(784px + (15px * 2));
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .icon {
+      width: 57px;
+      height: 57px;
+      background-color: $color-primary;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 50%;
+      margin: 0 auto 13px auto;
+      transition: all .2s ease;
+    }
+
+    .section-large-btn {
+      flex: 1;
+
+      &:nth-child(3n) {
+        flex-basis: 100%;
+      }
+
+      background: $color-white;
+      border-radius: 4px;
+      padding: 20px;
+      text-align: center;
+      margin: 0 15px 30px;
+      height: 141px;
+
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 140%;
+      color: $color-body;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-primary;
+
+        .icon {
+          transform: scale(1.13);
+        }
+      }
+    }
+  }
+
+  > .container {
+    z-index: 2;
+    position: relative;
+    text-align: center;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+}
+
+
+@media screen and (max-width: $breakpoint-medium) {
+  .connect-lending-experts {
+    background-position: center right 20%;
+
+    .actions {
+      .section-large-btn {
+        margin: 0 6px 10px;
+      }
+    }
+  }
+
+}
+
+
+@media only screen and (min-device-width: $breakpoint-phone-small) and (max-device-width: $breakpoint-mobile-iphone) and (orientation: landscape) {
+  .connect-lending-experts {
+    padding-left: 0;
+    padding-right: 0;
+    background-position: center right;
+
+    .section-description {
+      margin-bottom: 23px;
+    }
+
+    .actions {
+      .section-large-btn {
+        margin: 0 6px 10px;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: $breakpoint-mobile) and (orientation: portrait) {
+  .connect-lending-experts {
+    height: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 30px;
+    background-position: center left;
+
+    .section-title {
+      margin-bottom: 20px;
+    }
+
+    .section-description {
+      margin-bottom: 25px;
+    }
+
+    .actions {
+      .section-large-btn {
+        flex: auto;
+        margin-bottom: 15px;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+}

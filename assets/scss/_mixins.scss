@@ -1,0 +1,89 @@
+$breakpoints: (
+        sl: 430px,
+        xs: 576px,
+        sm: 768px,
+        md: 991px,
+        lg: 1200px,
+        xl: 1400px,
+        hd: 2000px,
+);
+
+$black: #3D3D3D;
+$gray: #7991B6;
+$green: #009821;
+$greenHover: #66C17A;
+$greenFocus: #009821;
+$greenDisable: #BDCBC0;
+$lightGreen: #E6F5E9;
+$white: #ffffff;
+$divider: #E7EAF3;
+$blue: #2C3972;
+
+@mixin media($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+@mixin media_portrait($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: #{map-get($breakpoints, $breakpoint)}) and (orientation: portrait) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+
+@mixin media_min($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+
+@mixin media_range($breakpoint, $breakpoint2) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: #{map-get($breakpoints, $breakpoint2)}) and (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+
+@mixin ie_fixes(){
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active){
+    @content
+  }
+}
+
+
+@mixin placeholder_new {
+  &::-webkit-input-placeholder {
+    @content
+  }
+  &:-moz-placeholder {
+    @content
+  }
+  &::-moz-placeholder {
+    @content
+  }
+  &:-ms-input-placeholder {
+    @content
+  }
+}

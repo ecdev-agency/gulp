@@ -1,0 +1,83 @@
+
+
+#mortgage_lender_section {
+  .section-title {
+    margin-bottom: 32px;
+  }
+}
+
+
+
+.mortgage-lender-items {
+
+  .mortgage-lender-item {
+    text-align: center;
+
+    .item-cat {
+      font-family: 'Rubik';
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 140%;
+      text-align: center;
+      color: #73C047;
+      margin: 0 auto 0 auto;
+    }
+
+    .item-description {
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 140%;
+      text-align: center;
+      color: $color-body;
+
+      p {
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 140%;
+        text-align: center;
+        color: $color-body;
+      }
+    }
+
+    .item-title {
+      font-family: 'Rubik';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 140%;
+      text-align: center;
+      color: #000000;
+      margin: 0 auto 4px auto;
+    }
+
+    .item-image-thumb {
+      overflow: hidden;
+      line-height: 0;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+
+
+@media screen and (max-width: $breakpoint-medium) {
+
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+
+  .mortgage-lender-items {
+
+    .mortgage-lender-item {
+      &:not(:last-child) {
+        >div {
+          margin-bottom: 32px;
+        }
+        }
+      }
+    }
+  }
