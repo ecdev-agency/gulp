@@ -9,6 +9,7 @@ const   gulp            = require('gulp'),
         uglify          = require('gulp-uglify'),
         babel           = require('gulp-babel'),
         rename          = require('gulp-rename'),
+        del             = require('del'),
         browserSync     = require('browser-sync').create();
 
 /**
@@ -17,7 +18,9 @@ const   gulp            = require('gulp'),
  */
 const   scssRoot    = './assets/scss',
         cssRoot     = './assets/css',
-        jsRoot      = './assets/js';
+        jsRoot      = './assets/js',
+        distRoot    = './assets/dist',
+        cssDist     = './assets/dist/css'
 
 /**
  * glob scss and js
@@ -61,12 +64,18 @@ function compileCSS (cb) {
         .pipe(sass().on('error', sass.logError))
         .pipe(minifyCSS())
         .pipe(autoprefixer(['last 5 versions', '> 1%', 'IE 10', 'IE 11'], {cascade: true}))
-        .pipe(sourcemaps.write())
         .pipe(rename({
+            dirname: './',
             suffix: '.min'
         }))
-        .pipe(gulp.dest('./assets/css/test'))
+        .pipe(sourcemaps.write('./', {
+            includeContent: false,
+            sourceRoot: '../../scss'
+        }))
+        .pipe(gulp.dest(cssDist))
         .on('end', cb)
+        .pipe(browserSync.stream())
+
 }
 
 /**
@@ -133,7 +142,7 @@ function watchCompile () {
         notify: false
     });
 
-    gulp.watch(glob.sass, compileCSS).on('change', browserSync.reload)
+    gulp.watch(glob.sass, compileCSS)
     gulp.watch(glob.js, compileJS).on('change', browserSync.reload)
     gulp.watch(glob.jsRqt, compileJSRQT).on('change', browserSync.reload)
 }
@@ -145,21 +154,28 @@ function watchCompile () {
  */
 function BuildProject (cb) {
 
+    /**
+     * Remove Folder Dist
+     */
+    del(distRoot, {force:true})
+
+    /**
+     * Generate New CSS
+     */
     gulp.src(glob.css)
         .pipe(sass().on('error', sass.logError))
         .pipe(minifyCSS())
         .pipe(autoprefixer(['last 5 versions', '> 1%', 'IE 10', 'IE 11'], {cascade: true}))
         .pipe(rename({
+            dirname: './',
             suffix: '.min'
         }))
-        .pipe(gulp.dest('./assets/css/test'))
+        .pipe(gulp.dest(cssDist))
         .on('end', cb)
 }
 /**
  * Compile Start Gulp
  * @type {compileCSS}
  */
-//exports.css = compileCSS
-//exports.js = compileJS
-exports.default = parallel(watchCompile)
+exports.default = watchCompile
 exports.build = BuildProject

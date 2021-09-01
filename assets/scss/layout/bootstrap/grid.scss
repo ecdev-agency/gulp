@@ -65,8 +65,8 @@
   // Prevent columns from collapsing when empty
   min-height: 1px;
   // Inner gutter via padding
-  padding-left:  ($grid-gutter-width / 2);
-  padding-right: ($grid-gutter-width / 2);
+  padding-left:  (#{$grid-gutter-width} / 2);
+  padding-right: (#{$grid-gutter-width} / 2);
 }
 
 
@@ -101,8 +101,8 @@
 .col-xs-7  { width: percentage((7 / $grid-columns)); }
 .col-xs-8  { width: percentage((8 / $grid-columns)); }
 .col-xs-9  { width: percentage((9 / $grid-columns)); }
-.col-xs-10 { width: percentage((10/ $grid-columns)); }
-.col-xs-11 { width: percentage((11/ $grid-columns)); }
+.col-xs-10 { width: percentage((10 / $grid-columns)); }
+.col-xs-11 { width: percentage((11 / $grid-columns)); }
 .col-xs-12 { width: 100%; }
 
 

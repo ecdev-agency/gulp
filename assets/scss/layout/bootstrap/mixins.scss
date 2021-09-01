@@ -35,15 +35,15 @@
 @mixin container-fixed() {
   margin-right: auto;
   margin-left: auto;
-  padding-left: ($grid-gutter-width / 2);
-  padding-right: ($grid-gutter-width / 2);
+  padding-left: (#{$grid-gutter-width} / 2);
+  padding-right: (#{$grid-gutter-width} / 2);
   @include clearfix();
 }
 
 // Creates a wrapper for a series of columns
 @mixin make-row($gutter: $grid-gutter-width) {
-  margin-left: ($gutter / -2);
-  margin-right: ($gutter / -2);
+  margin-left: (#{$gutter} / -2);
+  margin-right: (#{$gutter} / -2);
   @include clearfix();
 }
 
@@ -55,8 +55,8 @@
   // Prevent columns from collapsing when empty
   min-height: 1px;
   // Inner gutter via padding
-  padding-left: ($gutter / 2);
-  padding-right: ($gutter / 2);
+  padding-left: (#{$gutter} / 2);
+  padding-right: (#{$gutter} / 2);
 }
 
 // Generate the small columns
@@ -65,8 +65,8 @@
   // Prevent columns from collapsing when empty
   min-height: 1px;
   // Inner gutter via padding
-  padding-left: ($gutter / 2);
-  padding-right: ($gutter / 2);
+  padding-left: (#{$gutter} / 2);
+  padding-right: (#{$gutter} / 2);
 
   // Calculate width based on number of columns available
   @media (min-width: $screen-sm) {
@@ -98,8 +98,8 @@
   // Prevent columns from collapsing when empty
   min-height: 1px;
   // Inner gutter via padding
-  padding-left: ($gutter / 2);
-  padding-right: ($gutter / 2);
+  padding-left: (#{$gutter} / 2);
+  padding-right: (#{$gutter} / 2);
 
   // Calculate width based on number of columns available
   @media (min-width: $screen-md) {
@@ -131,8 +131,8 @@
   // Prevent columns from collapsing when empty
   min-height: 1px;
   // Inner gutter via padding
-  padding-left: ($gutter / 2);
-  padding-right: ($gutter / 2);
+  padding-left: (#{$gutter} / 2);
+  padding-right: (#{$gutter} / 2);
 
   // Calculate width based on number of columns available
   @media (min-width: $screen-lg) {
